@@ -140,11 +140,11 @@ section.resume-section .resume-item .resume-date {
 
 .text-secondary {
   color: #009999 !important;
-  font-size: 40px;
+  font-size: 30px;
 }
 }
 a {
-  color: #009999;
+  color: #009999 !important;
 }
 
 a:hover, a:focus, a:active {
