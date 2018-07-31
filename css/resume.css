@@ -138,6 +138,12 @@ section.resume-section .resume-item .resume-date {
   color: #009999 !important;
 }
 
+.text-secondary {
+  color: #009999 !important;
+  font-size: 16px;
+
+}
+}
 a {
   color: #009999;
 }
