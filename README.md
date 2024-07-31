@@ -1,6 +1,6 @@
 
 Resume - Portfolio | Hemanth Sabbella
 
-Everything related to work, experience and projects I have done so far
+Research work, work experience and some highlights!
 
 Theme credits: jmcglone
