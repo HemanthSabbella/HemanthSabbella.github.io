@@ -58,19 +58,18 @@
       color: var(--ocean-primary);
     }
 
-    /* hide mobile menu on desktop */
-    #menu-btn,
-    .mobile-menu {
+    /* Hide mobile menu on desktop */
+    #menu-btn, .mobile-menu {
       display: none;
     }
 
     @media only screen and (max-width: 768px) {
-      /* hide desktop nav */
+      /* Hide desktop nav */
       .nav.nav-pills.pull-right {
         display: none !important;
       }
 
-      /* hamburger */
+      /* Hamburger button */
       #menu-btn {
         display: inline-block !important;
         font-size: 1.5em;
@@ -82,8 +81,10 @@
         margin-left: 0.5rem;
       }
 
-      /* center header */
-      .header { text-align: center; }
+      /* Center header + align icon */
+      .header {
+        text-align: center;
+      }
       .header-right {
         display: inline-flex;
         align-items: baseline;
@@ -93,7 +94,7 @@
         display: inline;
       }
 
-      /* slide-down menu */
+      /* Mobile menu card */
       .mobile-menu {
         display: none;
         max-width: 300px;
@@ -118,11 +119,12 @@
         background: rgba(0,150,199,0.1);
       }
 
-      /* stack & space out galleries */
+      /* Stack & auto-size galleries */
       .projects .gallery {
         width: auto !important;
         float: none !important;
-        margin: 2rem auto !important;  /* plenty of vertical space */
+        margin: 2rem auto !important;     /* vertical gap */
+        height: auto !important;          /* let title expand */
       }
       .projects .gallery img {
         width: 80%;
@@ -138,14 +140,11 @@
 
 <body>
   <div class="container">
+
     <div class="header">
       <ul class="nav nav-pills pull-right">
-        <li class="passive">
-          <a href="/projects" style="text-transform: none;">Projects</a>
-        </li>
-        <li>
-          <a href="/publications" style="text-transform: none;">Publications</a>
-        </li>
+        <li class="passive"><a href="/projects" style="text-transform: none;">Projects</a></li>
+        <li><a href="/publications" style="text-transform: none;">Publications</a></li>
         <li class="passive">
           <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing"
              style="text-transform: none;">CV</a>
@@ -159,84 +158,82 @@
       </div>
     </div>
 
-    <!-- mobile menu -->
+    <!-- Mobile-only menu -->
     <ul class="mobile-menu" id="mobile-menu">
       <li><a href="/projects">Projects</a></li>
       <li><a href="/publications">Publications</a></li>
       <li>
-        <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing">
-          CV
-        </a>
+        <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing">CV</a>
       </li>
     </ul>
 
     <div class="projects">
       <div class="gallery">
         <a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/10494427">
-          <img src="/img/IMG_0244.jpeg" alt="PA2BLO">
+          <img src="/img/IMG_0244.jpeg" alt="Cinque Terre" width="600" height="500">
         </a>
         <div class="desc">PA2BLO</div>
       </div>
 
       <div class="gallery">
         <a target="_blank" href="http://u-Bat.github.io/">
-          <img src="/img/logo_ubat.png" alt="u-Bat">
+          <img src="/img/logo_ubat.png" alt="Cinque Terre" width="600" height="450">
         </a>
         <div class="desc">u-Bat</div>
       </div>
 
       <div class="gallery">
         <a target="_blank" href="https://hemanthsabbella.github.io/pointSpectra/">
-          <img src="/img/pointSpectra.jpg" alt="pointSpectra">
+          <img src="/img/pointSpectra.jpg" alt="Mountains" width="600" height="400">
         </a>
         <div class="desc">pointSpectra</div>
       </div>
 
       <div class="gallery">
         <a target="_blank" href="https://arxiv.org/pdf/1911.09371.pdf">
-          <img src="/img/UDR_ADC.PNG" alt="UDR-ADC prototype">
+          <img src="/img/UDR_ADC.PNG" alt="Northern Lights" width="600" height="400">
         </a>
         <div class="desc">UDR-ADC prototype</div>
       </div>
 
       <div class="gallery">
         <a target="_blank" href="https://github.com/HemanthSabbella/Dhvani">
-          <img src="/img/Dhvani.jpeg" alt="Dhvani">
+          <img src="/img/Dhvani.jpeg" alt="Forest" width="600" height="400">
         </a>
         <div class="desc">Dhvani</div>
       </div>
 
       <div class="gallery">
         <a target="_blank" href="https://github.com/HemanthSabbella/Project_Reports/blob/master/MSD_project_final.pdf">
-          <img src="/img/MSD_project.png" alt="Gamma Brain Wave Filter">
+          <img src="/img/MSD_project.png" alt="Cinque Terre" width="600" height="400">
         </a>
         <div class="desc">Gamma Brain Wave Filter</div>
       </div>
 
       <div class="gallery">
         <a target="_blank" href="https://github.com/HemanthSabbella/Project_Reports/blob/master/SoC%20Presentation.pdf">
-          <img src="/img/Soc_project.png" alt="SoC Security">
+          <img src="/img/Soc_project.png" alt="Forest" width="600" height="400">
         </a>
         <div class="desc">SoC Security: A logic level methodology to prevent differential power analysis</div>
       </div>
 
       <div class="gallery">
         <a target="_blank" href="https://github.com/HemanthSabbella/Project_Reports/blob/master/robotics_ardrone.py">
-          <img src="/img/Red_ball.png" alt="Red Ball Detection on Quadcopter">
+          <img src="/img/Red_ball.png" alt="Mountains" width="600" height="400">
         </a>
         <div class="desc">Red Ball Detection on Quadcopter</div>
       </div>
 
       <div class="gallery">
         <a target="_blank" href="https://github.com/HemanthSabbella/PCBDesign/tree/master/EMI_sensing_board/LNA-Board(DL)">
-          <img src="/img/EMI.png" alt="EMI Sensing Board">
+          <img src="/img/EMI.png" alt="Mountains" width="600" height="400">
         </a>
         <div class="desc">EMI Sensing Board</div>
       </div>
 
       <div class="gallery">
         <a target="_blank" href="https://github.com/HemanthSabbella/PCBDesign/tree/master/IIITDuino_hemanth">
-          <img src="/img/IIITDuino.PNG" alt="IIITDuino">
+          <img src="/img/IIITDuino.PNG" alt="Mountains" width="600" height="400">
         </a>
         <div class="desc">IIITDuino</div>
       </div>
@@ -244,17 +241,16 @@
 
     <div class="footer">
       <div class="row">
-        <div class="col-sm-8"><small></small></div>
+        <div class="col-sm-8"><p><small></small></p></div>
         <div class="col-sm-4"><p class="pull-right"><small></small></p></div>
       </div>
     </div>
   </div>
 
   <script>
-    // toggle mobile menu
     document.getElementById('menu-btn').addEventListener('click', function() {
       var menu = document.getElementById('mobile-menu');
-      menu.style.display = (menu.style.display === 'block' ? 'none' : 'block');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
     });
   </script>
   <script src="https://code.jquery.com/jquery.js"></script>
