@@ -23,8 +23,7 @@
       color: var(--ocean-primary);
       text-decoration: none;
     }
-    a:hover,
-    a:focus {
+    a:hover, a:focus {
       color: var(--ocean-hover);
       text-decoration: underline;
     }
@@ -36,7 +35,7 @@
     }
 
     @media only screen and (max-width: 768px) {
-      /* Hide desktop pills */
+      /* Hide desktop nav-pills */
       .nav.nav-pills.pull-right {
         display: none !important;
       }
@@ -44,7 +43,7 @@
       /* Hamburger button */
       #menu-btn {
         display: inline-block !important;
-        font-size: 1.5em;            /* bigger */
+        font-size: 1.5em;
         line-height: 1;
         background: none;
         border: none;
@@ -54,7 +53,7 @@
         margin-left: 0.5rem;
       }
 
-      /* Center header, align icon to text baseline */
+      /* Center header + align icon */
       .header {
         text-align: center;
       }
@@ -67,25 +66,29 @@
         display: inline;
       }
 
-      /* Mobile menu: hidden until tapped */
+      /* Polished mobile menu card */
       .mobile-menu {
-        display: none;
+        display: none;           /* stays hidden until you tap */
+        max-width: 300px;
+        margin: 0.75rem auto 1.5rem;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         list-style: none;
         padding: 0;
-        margin: 0.5rem 0 1rem;
       }
       .mobile-menu li + li {
-        margin-top: 0.75rem;
+        border-top: 1px solid #eee;
       }
       .mobile-menu a {
-        color: var(--ocean-primary);
-        text-decoration: none;
         display: block;
-        font-size: 1rem; /* same as desktop */
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        color: var(--ocean-primary);
       }
       .mobile-menu a:hover {
-        color: var(--ocean-hover);
-        text-decoration: underline;
+        background: rgba(0,150,199,0.1);
       }
 
       /* Center avatar & contacts */
@@ -111,7 +114,7 @@
         </li>
       </ul>
 
-      <!-- Mobile header: your name + hamburger -->
+      <!-- Mobile header: name + hamburger -->
       <div class="header-right">
         <h3 class="text-muted" style="text-transform: none;">
           <a href="/">Hemanth Sabbella</a>
@@ -120,35 +123,30 @@
       </div>
     </div> <!-- /header -->
 
-    <!-- Mobile menu (toggled) -->
+    <!-- Mobile-only menu -->
     <ul class="mobile-menu" id="mobile-menu">
       <li><a href="/projects">Projects</a></li>
       <li><a href="/publications">Publications</a></li>
-      <li>
-        <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing">
-          CV
-        </a>
-      </li>
+      <li><a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing">CV</a></li>
     </ul>
 
-    <!-- Rest of your original index.html content -->
     <div class="row marketing">
       <div class="col-sm-4">
         <img class="img-circle avatar" width="200" height="200" alt="Hemanth Sabbella"
              src="img/hemanth_percom_resized3.jpg">
         <p>
           <img src="https://img.icons8.com/windows/32/000000/email-open.png"
-               style="width:25px; height:25px; vertical-align:middle;">
+               style="width:25px; height:25px; vertical-align:middle">
           <a href="mailto:shrsabbella.2024@phdcs.smu.edu.sg">Email</a>
         </p>
         <p>
           <img src="https://img.icons8.com/ios-filled/344/linkedin-2--v1.png"
-               style="width:23px; height:23px; vertical-align:middle;">
+               style="width:23px; height:23px; vertical-align:middle">
           <a href="https://www.linkedin.com/in/hemanthsabbella/">LinkedIn</a>
         </p>
         <p>
           <img src="https://img.icons8.com/material-two-tone/344/google-scholar.png"
-               style="width:25px; height:25px; vertical-align:middle;">
+               style="width:25px; height:25px; vertical-align:middle">
           <a href="https://scholar.google.com/citations?user=KPyLReEAAAAJ&amp;hl=en">Google Scholar</a>
         </p>
         <span itemprop="hashtags">
@@ -164,14 +162,14 @@
           advised by Prof. Archan Misra and Prof. Dong Ma. Currently a visiting student at M3S,
           under <a href="https://m3s.mit.edu/our-team/hemant-sebbal">MIT's SMART Program</a>
         </p>
-        <!-- …other paragraphs unchanged… -->
+        <!-- ...rest of your content unchanged... -->
       </div>
     </div>
 
     <div class="row marketing">
       <p style="font-size:21px; color:var(--ocean-primary);">Highlights:</p>
       <ul style="list-style:none; padding:0; margin:0;">
-        <!-- …your highlights… -->
+        <!-- …your highlight items… -->
       </ul>
     </div>
 
@@ -180,14 +178,14 @@
         <div class="col-sm-8"><p><small></small></p></div>
         <div class="col-sm-4"><p class="pull-right"><small></small></p></div>
       </div>
-    </div> <!-- /footer -->
-  </div> <!-- /container -->
+    </div><!-- /footer -->
+  </div><!-- /container -->
 
   <script>
     // Toggle mobile menu
     document.getElementById('menu-btn').addEventListener('click', function() {
-      var m = document.getElementById('mobile-menu');
-      m.style.display = (m.style.display === 'block' ? 'none' : 'block');
+      var menu = document.getElementById('mobile-menu');
+      menu.style.display = (menu.style.display === 'block' ? 'none' : 'block');
     });
   </script>
   <script src="https://code.jquery.com/jquery.js"></script>
