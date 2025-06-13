@@ -2,19 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <!-- Corrected viewport so media queries work -->
+  <!-- Correct viewport so our media rules work -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Hemanth's website.">
   <meta name="author" content="Hemanth Sabbella">
   <meta property="og:image" content="img/hemanth_percom.jpg" />
-  <title>About | Hemanth </title>
+  <title>About | Hemanth</title>
 
   <!-- styles -->
   <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/jumbotron-narrow.css" rel="stylesheet">
   <link href="/css/style.css" rel="stylesheet">
 
-  <!-- override link and highlight colors + mobile menu CSS -->
   <style>
     :root {
       --ocean-primary: #0096C7;
@@ -30,23 +29,49 @@
       text-decoration: underline;
     }
 
-    /* hide the mobile menu on desktop */
-    .mobile-menu {
+    /* Hide mobile menu and button by default */
+    .mobile-menu,
+    #menu-btn {
       display: none;
     }
 
-    /* mobile-only: swap nav-pills for mobile menu */
+    /* Desktop nav remains unchanged */
     @media only screen and (max-width: 768px) {
-      /* hide desktop nav */
+      /* Hide desktop pills */
       .nav.nav-pills.pull-right {
         display: none !important;
       }
-      /* show mobile menu */
+
+      /* Show hamburger */
+      #menu-btn {
+        display: inline-block;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: var(--ocean-primary);
+        cursor: pointer;
+        margin-left: 0.5rem;
+      }
+
+      /* Flex container for name + button */
+      .header h3 {
+        display: inline-block;
+        margin: 0;
+      }
+      .header {
+        text-align: center;
+      }
+      .header .header-right {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      /* Mobile menu */
       .mobile-menu {
         display: block;
         list-style: none;
-        margin: 1rem 0;
         padding: 0;
+        margin: 0.5rem 0 1rem;
       }
       .mobile-menu li + li {
         margin-top: 0.75rem;
@@ -55,12 +80,18 @@
         color: var(--ocean-primary);
         text-decoration: none;
         display: block;
-        /* text-size unchanged */
+        font-size: 1rem; /* same as desktop */
       }
-      .mobile-menu a:hover,
-      .mobile-menu a:focus {
+      .mobile-menu a:hover {
         color: var(--ocean-hover);
         text-decoration: underline;
+      }
+
+      /* Center avatar & contact on mobile */
+      .row.marketing .col-sm-4 {
+        text-align: center;
+        margin: 0 auto;
+        float: none;
       }
     }
   </style>
@@ -69,7 +100,7 @@
 <body>
   <div class="container">
     <div class="header">
-      <!-- original desktop nav-pills -->
+      <!-- desktop pills unchanged -->
       <ul class="nav nav-pills pull-right">
         <li><a href="/projects" title="Projects" style="text-transform: none;">Projects</a></li>
         <li><a href="/publications" title="Publications" style="text-transform: none;">Publications</a></li>
@@ -79,21 +110,25 @@
         </li>
       </ul>
 
-      <!-- mobile-only menu -->
-      <ul class="mobile-menu">
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/publications">Publications</a></li>
-        <li>
-          <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing">
-            CV
-          </a>
-        </li>
-      </ul>
-
-      <h3 class="text-muted" style="text-transform: none;">
-        <a href="/">Hemanth Sabbella</a>
-      </h3>
+      <!-- mobile header: name + hamburger -->
+      <div class="header-right">
+        <h3 class="text-muted" style="text-transform: none; display:inline;">
+          <a href="/">Hemanth Sabbella</a>
+        </h3>
+        <button id="menu-btn" aria-label="Menu">☰</button>
+      </div>
     </div> <!-- /header -->
+
+    <!-- mobile-only menu -->
+    <ul class="mobile-menu" id="mobile-menu">
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/publications">Publications</a></li>
+      <li>
+        <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing">
+          CV
+        </a>
+      </li>
+    </ul>
 
     <div class="row marketing">
       <div class="col-sm-4">
@@ -101,23 +136,21 @@
              src="img/hemanth_percom_resized3.jpg">
         <p>
           <img src="https://img.icons8.com/windows/32/000000/email-open.png"
-               style="margin-left:35px; width:25px; height:25px">
-          <a style="margin-left:5px;" href="mailto:shrsabbella.2024@phdcs.smu.edu.sg">Email</a>
+               style="width:25px; height:25px; vertical-align:middle;">
+          <a href="mailto:shrsabbella.2024@phdcs.smu.edu.sg">Email</a>
         </p>
         <p>
           <img src="https://img.icons8.com/ios-filled/344/linkedin-2--v1.png"
-               style="margin-left:35px; width:23px; height:23px;">
-          <a style="margin-left:5px;" href="https://www.linkedin.com/in/hemanthsabbella/">LinkedIn</a>
+               style="width:23px; height:23px; vertical-align:middle;">
+          <a href="https://www.linkedin.com/in/hemanthsabbella/">LinkedIn</a>
         </p>
         <p>
           <img src="https://img.icons8.com/material-two-tone/344/google-scholar.png"
-               style="margin-left:35px; width:25px; height:25px">
-          <a style="margin-left:5px;" href="https://scholar.google.com/citations?user=KPyLReEAAAAJ&amp;hl=en">
-            Google Scholar
-          </a>
+               style="width:25px; height:25px; vertical-align:middle;">
+          <a href="https://scholar.google.com/citations?user=KPyLReEAAAAJ&amp;hl=en">Google Scholar</a>
         </p>
         <span itemprop="hashtags">
-          <p style="margin-top:20px; text-align:center; font-size:14px; color:var(--ocean-primary);">
+          <p style="margin-top:20px; font-size:14px; color:var(--ocean-primary);">
             #neuromorphic  #wearables  #lowpowersystems  #tinyML  #IoT  #ubiquitouscomputing
           </p>
         </span>
@@ -154,10 +187,9 @@
     </div>
 
     <div class="row marketing">
-      <!-- changed highlight color here -->
       <p style="font-size:21px; color:var(--ocean-primary);">Highlights:</p>
       <ul style="list-style:none; padding:0; margin:0;">
-        <li style="margin:0.5em 0;">
+<li style="margin:0.5em 0;">
           💼 <strong>05-2025:</strong> Started as a Visiting Student at Singapore-MIT Alliance for
           Research and Technology Center with
           <a href="https://m3s.mit.edu/">Mens, Manus and Machina (M3S)</a> Group
@@ -222,11 +254,18 @@
         <div class="col-sm-8"><p><small></small></p></div>
         <div class="col-sm-4"><p class="pull-right"><small></small></p></div>
       </div>
-    </div> <!-- /footer -->
+    </div><!-- /footer -->
 
-  </div> <!-- /container -->
+  </div><!-- /container -->
 
-  <!-- javascript at the end -->
+  <!-- javascript -->
+  <script>
+    // toggle mobile menu
+    document.getElementById('menu-btn').addEventListener('click', function() {
+      var menu = document.getElementById('mobile-menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    });
+  </script>
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/library.js"></script>
