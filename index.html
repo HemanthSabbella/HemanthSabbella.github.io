@@ -28,7 +28,7 @@
       text-decoration: underline;
     }
 
-    /* Hide mobile elements on desktop */
+    /* Hide mobile-specific elements on desktop */
     #menu-btn,
     .mobile-menu {
       display: none;
@@ -40,7 +40,7 @@
         display: none !important;
       }
 
-      /* show larger hamburger */
+      /* larger hamburger button */
       #menu-btn {
         display: inline-block !important;
         font-size: 1.5em;
@@ -66,9 +66,9 @@
         display: inline;
       }
 
-      /* mobile menu styling */
+      /* polished mobile menu card */
       .mobile-menu {
-        display: none;           /* hidden until tapped */
+        display: none;          /* remains hidden until tapped */
         max-width: 300px;
         margin: 0.75rem auto 1.5rem;
         background: #fff;
@@ -83,8 +83,8 @@
       }
       .mobile-menu a {
         display: block;
-        padding: 1rem 1.25rem;      /* more padding */
-        font-size: 1.25rem;         /* larger text */
+        padding: 1.5rem 1.5rem;   /* increased padding */
+        font-size: 1.5rem;        /* larger text */
         color: var(--ocean-primary);
       }
       .mobile-menu a:hover {
@@ -104,7 +104,7 @@
 <body>
   <div class="container">
     <div class="header">
-      <!-- desktop nav-pills (unchanged) -->
+      <!-- Desktop nav-pills (unchanged) -->
       <ul class="nav nav-pills pull-right">
         <li><a href="/projects" style="text-transform: none;">Projects</a></li>
         <li><a href="/publications" style="text-transform: none;">Publications</a></li>
@@ -114,7 +114,7 @@
         </li>
       </ul>
 
-      <!-- mobile header: name + hamburger -->
+      <!-- Mobile header: name + hamburger -->
       <div class="header-right">
         <h3 class="text-muted" style="text-transform: none;">
           <a href="/">Hemanth Sabbella</a>
@@ -123,15 +123,11 @@
       </div>
     </div> <!-- /header -->
 
-    <!-- mobile-only menu -->
+    <!-- Mobile-only menu -->
     <ul class="mobile-menu" id="mobile-menu">
       <li><a href="/projects">Projects</a></li>
       <li><a href="/publications">Publications</a></li>
-      <li>
-        <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing">
-          CV
-        </a>
-      </li>
+      <li><a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing">CV</a></li>
     </ul>
 
     <!-- Original content unchanged -->
@@ -167,7 +163,7 @@
           advised by Prof. Archan Misra and Prof. Dong Ma. Currently a visiting student at M3S,
           under <a href="https://m3s.mit.edu/our-team/hemant-sebbal">MIT's SMART Program</a>
         </p>
-        <!-- …rest unchanged… -->
+        <!-- …rest of content unchanged… -->
       </div>
     </div>
 
@@ -183,11 +179,11 @@
         <div class="col-sm-8"><p><small></small></p></div>
         <div class="col-sm-4"><p class="pull-right"><small></small></p></div>
       </div>
-    </div>
-  </div>
+    </div><!-- /footer -->
+  </div><!-- /container -->
 
   <script>
-    // toggle mobile menu
+    // Toggle mobile menu
     document.getElementById('menu-btn').addEventListener('click', function() {
       var menu = document.getElementById('mobile-menu');
       menu.style.display = (menu.style.display === 'block' ? 'none' : 'block');
