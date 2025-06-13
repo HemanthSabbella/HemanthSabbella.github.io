@@ -15,17 +15,23 @@
   <link href="/css/style.css" rel="stylesheet">
 
   <style>
-    /* remove that unwanted header line on desktop */
-    .header {
-      border-bottom: none !important;
-    }
-
     :root {
       --ocean-primary: #0096C7;
       --ocean-hover:   #006494;
     }
-    a { color: var(--ocean-primary); text-decoration: none; }
-    a:hover, a:focus { color: var(--ocean-hover); text-decoration: underline; }
+    a {
+      color: var(--ocean-primary);
+      text-decoration: none;
+    }
+    a:hover, a:focus {
+      color: var(--ocean-hover);
+      text-decoration: underline;
+    }
+
+    /* hide only the extra <hr> right after the header */
+    .header + hr {
+      display: none;
+    }
 
     /* Desktop gallery layout unchanged */
     div.gallery {
@@ -63,18 +69,18 @@
       color: var(--ocean-primary);
     }
 
-    /* Hide mobile menu on desktop */
-    #menu-btn, .mobile-menu {
+    /* hide mobile menu on desktop */
+    #menu-btn,
+    .mobile-menu {
       display: none;
     }
 
     @media only screen and (max-width: 768px) {
-      /* Hide desktop nav */
+      /* hide desktop nav */
       .nav.nav-pills.pull-right {
         display: none !important;
       }
-
-      /* Hamburger button */
+      /* hamburger */
       #menu-btn {
         display: inline-block !important;
         font-size: 1.5em;
@@ -85,8 +91,7 @@
         vertical-align: middle;
         margin-left: 0.5rem;
       }
-
-      /* Center header + align icon */
+      /* center header */
       .header {
         text-align: center;
       }
@@ -98,8 +103,7 @@
         margin: 0;
         display: inline;
       }
-
-      /* Mobile menu card */
+      /* mobile menu card */
       .mobile-menu {
         display: none;
         max-width: 300px;
@@ -123,13 +127,12 @@
       .mobile-menu a:hover {
         background: rgba(0,150,199,0.1);
       }
-
-      /* Stack & auto-size galleries */
+      /* stack & auto-size galleries */
       .projects .gallery {
         width: auto !important;
         float: none !important;
-        margin: 2rem auto !important;     /* vertical gap */
-        height: auto !important;          /* let title expand */
+        margin: 2rem auto !important;
+        height: auto !important;
       }
       .projects .gallery img {
         width: 80%;
@@ -145,14 +148,14 @@
 
 <body>
   <div class="container">
-
     <div class="header">
       <ul class="nav nav-pills pull-right">
         <li class="passive"><a href="/projects" style="text-transform: none;">Projects</a></li>
         <li><a href="/publications" style="text-transform: none;">Publications</a></li>
         <li class="passive">
-          <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing"
-             style="text-transform: none;">CV</a>
+          <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing" style="text-transform: none;">
+            CV
+          </a>
         </li>
       </ul>
       <div class="header-right">
@@ -162,6 +165,8 @@
         <button id="menu-btn" aria-label="Menu">☰</button>
       </div>
     </div>
+    <!-- This <hr> (from your jumbotron or elsewhere) is now hidden by .header + hr -->
+    <hr>
 
     <!-- Mobile-only menu -->
     <ul class="mobile-menu" id="mobile-menu">
@@ -179,54 +184,65 @@
         </a>
         <div class="desc">PA2BLO</div>
       </div>
+
       <div class="gallery">
         <a target="_blank" href="http://u-Bat.github.io/">
           <img src="/img/logo_ubat.png" alt="u-Bat">
         </a>
         <div class="desc">u-Bat</div>
       </div>
+
       <div class="gallery">
         <a target="_blank" href="https://hemanthsabbella.github.io/pointSpectra/">
           <img src="/img/pointSpectra.jpg" alt="pointSpectra">
         </a>
         <div class="desc">pointSpectra</div>
       </div>
+
       <div class="gallery">
         <a target="_blank" href="https://arxiv.org/pdf/1911.09371.pdf">
           <img src="/img/UDR_ADC.PNG" alt="UDR-ADC prototype">
         </a>
         <div class="desc">UDR-ADC prototype</div>
       </div>
+
       <div class="gallery">
         <a target="_blank" href="https://github.com/HemanthSabbella/Dhvani">
           <img src="/img/Dhvani.jpeg" alt="Dhvani">
         </a>
         <div class="desc">Dhvani</div>
       </div>
+
       <div class="gallery">
         <a target="_blank" href="https://github.com/HemanthSabbella/Project_Reports/blob/master/MSD_project_final.pdf">
           <img src="/img/MSD_project.png" alt="Gamma Brain Wave Filter">
         </a>
         <div class="desc">Gamma Brain Wave Filter</div>
       </div>
+
       <div class="gallery">
         <a target="_blank" href="https://github.com/HemanthSabbella/Project_Reports/blob/master/SoC%20Presentation.pdf">
           <img src="/img/Soc_project.png" alt="SoC Security">
         </a>
-        <div class="desc">SoC Security: A logic level methodology to prevent differential power analysis</div>
+        <div class="desc">
+          SoC Security: A logic level methodology to prevent differential power analysis
+        </div>
       </div>
+
       <div class="gallery">
         <a target="_blank" href="https://github.com/HemanthSabbella/Project_Reports/blob/master/robotics_ardrone.py">
           <img src="/img/Red_ball.png" alt="Red Ball Detection on Quadcopter">
         </a>
         <div class="desc">Red Ball Detection on Quadcopter</div>
       </div>
+
       <div class="gallery">
         <a target="_blank" href="https://github.com/HemanthSabbella/PCBDesign/tree/master/EMI_sensing_board/LNA-Board(DL)">
           <img src="/img/EMI.png" alt="EMI Sensing Board">
         </a>
         <div class="desc">EMI Sensing Board</div>
       </div>
+
       <div class="gallery">
         <a target="_blank" href="https://github.com/HemanthSabbella/PCBDesign/tree/master/IIITDuino_hemanth">
           <img src="/img/IIITDuino.PNG" alt="IIITDuino">
@@ -237,16 +253,17 @@
 
     <div class="footer">
       <div class="row">
-        <div class="col-sm-8"><p><small></small></p></div>
+        <div class="col-sm-8"><small></small></div>
         <div class="col-sm-4"><p class="pull-right"><small></small></p></div>
       </div>
     </div>
-  </div>
+  </div> <!-- /container -->
 
   <script>
+    // toggle mobile menu
     document.getElementById('menu-btn').addEventListener('click', function() {
-      var menu = document.getElementById('mobile-menu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+      var m = document.getElementById('mobile-menu');
+      m.style.display = m.style.display === 'block' ? 'none' : 'block';
     });
   </script>
   <script src="https://code.jquery.com/jquery.js"></script>
