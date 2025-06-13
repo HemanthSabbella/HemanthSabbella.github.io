@@ -19,6 +19,12 @@
       --ocean-primary: #0096C7;
       --ocean-hover:   #006494;
     }
+
+    /* remove header’s bottom border so only one line remains */
+    .header {
+      border-bottom: none !important;
+    }
+
     a {
       color: var(--ocean-primary);
       text-decoration: none;
@@ -26,11 +32,6 @@
     a:hover, a:focus {
       color: var(--ocean-hover);
       text-decoration: underline;
-    }
-
-    /* hide any <hr> that lives directly under .container (the extra line) */
-    .container > hr {
-      display: none !important;
     }
 
     /* Desktop gallery layout unchanged */
@@ -169,8 +170,6 @@
       </div>
     </div>
 
-    <!-- any <hr> here will now be hidden by the .container > hr rule -->
-
     <!-- Mobile-only menu -->
     <ul class="mobile-menu" id="mobile-menu">
       <li><a href="/projects">Projects</a></li>
@@ -249,13 +248,12 @@
         <div class="col-sm-4"><p class="pull-right"><small></small></p></div>
       </div>
     </div>
-  </div> <!-- /container -->
+  </div><!-- /container -->
 
   <script>
-    // toggle mobile menu
     document.getElementById('menu-btn').addEventListener('click', function() {
       var m = document.getElementById('mobile-menu');
-      m.style.display = m.style.display === 'block' ? 'none' : 'block';
+      m.style.display = (m.style.display === 'block' ? 'none' : 'block');
     });
   </script>
   <script src="https://code.jquery.com/jquery.js"></script>
