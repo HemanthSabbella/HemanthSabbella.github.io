@@ -28,15 +28,19 @@
       text-decoration: underline;
     }
 
-    /* style just this divider so it aligns exactly under .header */
-    .header-divider {
-      margin: 1rem 0 2rem;       /* adjust vertical spacing as you like */
-      border: none;
-      border-bottom: 1px solid #eee;
-      width: 100%;
+    /* hide all stray <hr> tags */
+    hr {
+      display: none !important;
     }
 
-    /* Desktop gallery layout unchanged */
+    /* apply exactly one underline to the header */
+    .header {
+      border-bottom: 1px solid #eee;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    /* Desktop gallery layout (unchanged) */
     div.gallery {
       margin: 7px;
       margin-left: 30px;
@@ -157,27 +161,19 @@
   <div class="container">
     <div class="header">
       <ul class="nav nav-pills pull-right">
-        <li class="passive">
-          <a href="/projects" style="text-transform: none;">Projects</a>
-        </li>
-        <li>
-          <a href="/publications" style="text-transform: none;">Publications</a>
-        </li>
+        <li class="passive"><a href="/projects" style="text-transform: none;">Projects</a></li>
+        <li><a href="/publications" style="text-transform: none;">Publications</a></li>
         <li class="passive">
           <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing"
              style="text-transform: none;">CV</a>
         </li>
       </ul>
-
       <div class="header-right">
         <h3 class="text-muted" style="text-transform: none;">
           <a href="/">Hemanth Sabbella</a>
         </h3>
         <button id="menu-btn" aria-label="Menu">☰</button>
       </div>
-
-      <!-- this single <hr> now lives inside the header and spans exactly the container width -->
-      <hr class="header-divider">
     </div>
 
     <!-- Mobile-only menu -->
@@ -258,7 +254,7 @@
         <div class="col-sm-4"><p class="pull-right"><small></small></p></div>
       </div>
     </div>
-  </div><!-- /container -->
+  </div> <!-- /container -->
 
   <script>
     document.getElementById('menu-btn').addEventListener('click', function() {
