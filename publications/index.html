@@ -66,6 +66,22 @@
       /* even spacing for conference list */
       .publications ol li { margin-bottom: 1rem; }
     }
+    /* Desktop: tighten space under the header */
+    @media (min-width: 769px) {
+      .publications > p:first-of-type {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+    
+    /* Mobile: add more breathing room under the header */
+    @media (max-width: 768px) {
+      .publications > p:first-of-type {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+    }
+
   </style>
 </head>
 
