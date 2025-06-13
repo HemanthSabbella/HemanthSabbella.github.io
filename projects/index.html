@@ -19,12 +19,6 @@
       --ocean-primary: #0096C7;
       --ocean-hover:   #006494;
     }
-
-    /* remove header’s bottom border so only one line remains */
-    .header {
-      border-bottom: none !important;
-    }
-
     a {
       color: var(--ocean-primary);
       text-decoration: none;
@@ -32,6 +26,14 @@
     a:hover, a:focus {
       color: var(--ocean-hover);
       text-decoration: underline;
+    }
+
+    /* style just this divider so it aligns exactly under .header */
+    .header-divider {
+      margin: 1rem 0 2rem;       /* adjust vertical spacing as you like */
+      border: none;
+      border-bottom: 1px solid #eee;
+      width: 100%;
     }
 
     /* Desktop gallery layout unchanged */
@@ -136,8 +138,8 @@
       .projects .gallery {
         width: auto !important;
         float: none !important;
-        margin: 2rem auto !important;
-        height: auto !important;
+        margin: 2rem auto !important;    /* consistent vertical gap */
+        height: auto !important;         /* caption height follows content */
       }
       .projects .gallery img {
         width: 80%;
@@ -155,19 +157,27 @@
   <div class="container">
     <div class="header">
       <ul class="nav nav-pills pull-right">
-        <li class="passive"><a href="/projects" style="text-transform: none;">Projects</a></li>
-        <li><a href="/publications" style="text-transform: none;">Publications</a></li>
+        <li class="passive">
+          <a href="/projects" style="text-transform: none;">Projects</a>
+        </li>
+        <li>
+          <a href="/publications" style="text-transform: none;">Publications</a>
+        </li>
         <li class="passive">
           <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing"
              style="text-transform: none;">CV</a>
         </li>
       </ul>
+
       <div class="header-right">
         <h3 class="text-muted" style="text-transform: none;">
           <a href="/">Hemanth Sabbella</a>
         </h3>
         <button id="menu-btn" aria-label="Menu">☰</button>
       </div>
+
+      <!-- this single <hr> now lives inside the header and spans exactly the container width -->
+      <hr class="header-divider">
     </div>
 
     <!-- Mobile-only menu -->
