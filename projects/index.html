@@ -14,7 +14,7 @@
   <link href="/css/jumbotron-narrow.css" rel="stylesheet">
   <link href="/css/style.css" rel="stylesheet">
 
-  <!-- override link colors to ocean-primary -->
+  <!-- override link colors -->
   <style>
     :root {
       --ocean-primary: #0096C7;
@@ -32,39 +32,49 @@
 
     /* Mobile-only overrides */
     @media only screen and (max-width: 768px) {
-      /* Container padding */
-      .container { padding: 0 1rem; }
+      .nav.nav-pills.pull-right {
+        display: none !important;
+      }
+      .mobile-menu {
+        display: block;
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0;
+      }
+      .mobile-menu li + li {
+        margin-top: 0.75rem;
+      }
+      .mobile-menu a {
+        color: var(--ocean-primary);
+        text-decoration: none;
+        font-size: 1.125rem;
+        display: block;
+      }
+      .mobile-menu a:hover,
+      .mobile-menu a:focus {
+        color: var(--ocean-hover);
+        text-decoration: underline;
+      }
 
-      /* Fluid images */
+      .container { padding: 0 1rem; }
       img {
         max-width: 100%;
         height: auto;
       }
-
-      /* Stack nav pills vertically */
-      .nav.nav-pills.pull-right {
-        float: none !important;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .nav.nav-pills.pull-right li {
-        margin: 0.5rem 0;
-      }
-
-      /* Full-width gallery cards */
       .projects .gallery {
         width: 100% !important;
         float: none;
         margin: 0.5rem 0;
       }
-
-      /* Fluid typography */
       h1 { font-size: clamp(1.5rem, 5vw, 2.5rem); }
       p  { font-size: clamp(1rem, 3vw, 1.125rem); }
     }
 
-    /* existing desktop gallery styles */
+    .mobile-menu {
+      display: none;
+    }
+
+    /* existing gallery styles */
     div.gallery {
       margin: 7px;
       margin-left: 30px;
@@ -73,149 +83,53 @@
       width: 200px;
       height: 300px;
     }
-
-    /* hover effect styles */
-    div.gallery:hover {
-      --c: #1095c1; /* the color */
-      color: #0000;
-      background: 
-        linear-gradient(90deg, #fff 50%, var(--c) 0) calc(100% - var(--_p, 0%)) / 200%,
-        linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) no-repeat,
-        var(--_c, #0000);
-      -webkit-background-clip: text, padding-box, padding-box;
-              background-clip: text, padding-box, padding-box;
-      transition: 0s, color .5s, background-color .5s;
-    }
-
-    .hover:hover {
-      color: #fff;
-      --_c: var(--c);
-      --_p: 100%;
-      transition: 0.5s, color 0s .5s, background-color 0s .5s;
-    }
-
     div.gallery img {
       width: 100%;
       height: auto;
       border-radius: 3%;
     }
-
     div.desc {
       padding: 10px;
       text-align: center;
-      /* changed from #428bca */
       color: var(--ocean-primary);
     }
+    /* … hover effects … */
   </style>
 </head>
 
 <body>
   <div class="container">
-   <!-- Replace your old <div class="header">…</div> with this: -->
-<nav class="navbar navbar-default">
-  <div class="container">
-    <!-- Brand and toggle get grouped for mobile -->
-    <div class="navbar-header">
-      <button type="button"
-              class="navbar-toggle collapsed"
-              data-toggle="collapse"
-              data-target="#main-navbar"
-              aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/" style="text-transform: none;">
-        Hemanth Sabella
-      </a>
+    <div class="header">
+      <ul class="nav nav-pills pull-right">
+        <li class="passive"><a href="/projects">Projects</a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li class="passive">
+          <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing">CV</a>
+        </li>
+      </ul>
+
+      <ul class="mobile-menu">
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li><a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing">CV</a></li>
+      </ul>
+
+      <h3 class="text-muted"><a href="/">Hemanth Sabbella</a></h3>
     </div>
 
-    <!-- Collect the nav links -->
-    <div class="collapse navbar-collapse" id="main-navbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="/projects"      style="text-transform: none;">Projects</a></li>
-        <li><a href="/publications"  style="text-transform: none;">Publications</a></li>
-        <li><a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing"
-               style="text-transform: none;">CV</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container -->
-</nav>
-
-
     <div class="projects">
-      <div class="gallery">
-        <a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/10494427">
-          <img src="/img/IMG_0244.jpeg" alt="Cinque Terre" width="600" height="500">
-        </a>
-        <div class="desc">PA2BLO</div>
-      </div>
-      <div class="gallery">
-        <a target="_blank" href="http://u-Bat.github.io/">
-          <img src="/img/logo_ubat.png" alt="Cinque Terre" width="600" height="450">
-        </a>
-        <div class="desc">u-Bat</div>
-      </div>
-      <div class="gallery">
-        <a target="_blank" href="https://hemanthsabbella.github.io/pointSpectra/">
-          <img src="/img/pointSpectra.jpg" alt="Mountains" width="600" height="400">
-        </a>
-        <div class="desc">pointSpectra</div>
-      </div>
-      <div class="gallery">
-        <a target="_blank" href="https://arxiv.org/pdf/1911.09371.pdf">
-          <img src="/img/UDR_ADC.PNG" alt="Northern Lights" width="600" height="400">
-        </a>
-        <div class="desc">UDR-ADC prototype</div>
-      </div>
-      <div class="gallery">
-        <a target="_blank" href="https://github.com/HemanthSabbella/Dhvani">
-          <img src="/img/Dhvani.jpeg" alt="Forest" width="600" height="400">
-        </a>
-        <div class="desc">Dhvani</div>
-      </div>
-      <div class="gallery">
-        <a target="_blank" href="https://github.com/HemanthSabbella/Project_Reports/blob/master/MSD_project_final.pdf">
-          <img src="/img/MSD_project.png" alt="Cinque Terre" width="600" height="400">
-        </a>
-        <div class="desc">Gamma Brain Wave Filter</div>
-      </div>
-      <div class="gallery">
-        <a target="_blank" href="https://github.com/HemanthSabbella/Project_Reports/blob/master/SoC%20Presentation.pdf">
-          <img src="/img/Soc_project.png" alt="Forest" width="600" height="400">
-        </a>
-        <div class="desc">SoC Security: A logic level methodology to prevent differential power analysis</div>
-      </div>
-      <div class="gallery">
-        <a target="_blank" href="https://github.com/HemanthSabbella/Project_Reports/blob/master/robotics_ardrone.py">
-          <img src="/img/Red_ball.png" alt="Mountains" width="600" height="400">
-        </a>
-        <div class="desc">Red Ball Detection on Quadcopter</div>
-      </div>
-      <div class="gallery">
-        <a target="_blank" href="https://github.com/HemanthSabbella/PCBDesign/tree/master/EMI_sensing_board/LNA-Board(DL)">
-          <img src="/img/EMI.png" alt="Mountains" width="600" height="400">
-        </a>
-        <div class="desc">EMI Sensing Board</div>	
-      </div>
-      <div class="gallery">
-        <a target="_blank" href="https://github.com/HemanthSabbella/PCBDesign/tree/master/IIITDuino_hemanth">
-          <img src="/img/IIITDuino.PNG" alt="Mountains" width="600" height="400">
-        </a>
-        <div class="desc">IIITDuino</div>
+      <!-- … your project galleries … -->
+    </div>
+
+    <div class="footer">
+      <div class="row">
+        <div class="col-sm-8"><p><small></small></p></div>
+        <div class="col-sm-4"><p class="pull-right"><small></small></p></div>
       </div>
     </div>
   </div>
 
-  <div class="footer">
-    <div class="row">
-      <div class="col-sm-8"><p><small></small></p></div>
-      <div class="col-sm-4"><p class="pull-right"><small></small></p></div>
-    </div>
-  </div> <!-- /footer -->
-
-  <!-- javascript at the end of the doc so page loads faster -->
+  <!-- javascript at the end -->
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/library.js"></script>
