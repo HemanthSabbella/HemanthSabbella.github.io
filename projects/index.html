@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <!-- fixed viewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Publications">
+  <meta name="description" content="Hands-on projects">
   <meta name="author" content="Hemanth Sabbella">
   <meta property="og:image" content="img/hemanth_small.jpg" />
-  <title>Publications | Hemanth</title>
+  <title>Projects | Hemanth</title>
 
   <!-- styles -->
   <link href="/css/bootstrap.css" rel="stylesheet">
@@ -22,14 +22,50 @@
     a { color: var(--ocean-primary); text-decoration: none; }
     a:hover, a:focus { color: var(--ocean-hover); text-decoration: underline; }
 
-    /* hide mobile elements on desktop */
+    /* gallery hover effect and layout unchanged */
+    div.gallery {
+      margin: 7px;
+      margin-left: 30px;
+      border: 0px solid #ccc;
+      float: left;
+      width: 200px;
+      height: 300px;
+    }
+    div.gallery:hover {
+      --c: #1095c1;
+      color: #0000;
+      background:
+        linear-gradient(90deg, #fff 50%, var(--c) 0) calc(100% - var(--_p, 0%)) / 200%,
+        linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) no-repeat,
+        var(--_c, #0000);
+      background-clip: text, padding-box, padding-box;
+      transition: 0s, color .5s, background-color .5s;
+    }
+    .hover:hover {
+      color: #fff;
+      --_c: var(--c);
+      --_p: 100%;
+      transition: 0.5s, color 0s .5s, background-color 0s .5s;
+    }
+    div.gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 3%;
+    }
+    div.desc {
+      padding: 10px;
+      text-align: center;
+      color: var(--ocean-primary);
+    }
+
+    /* mobile menu elements hidden on desktop */
     #menu-btn, .mobile-menu { display: none; }
 
     @media only screen and (max-width: 768px) {
-      /* hide desktop nav-pills */
+      /* hide desktop nav pills */
       .nav.nav-pills.pull-right { display: none !important; }
 
-      /* hamburger */
+      /* hamburger button */
       #menu-btn {
         display: inline-block !important;
         font-size: 1.5em;
@@ -41,15 +77,12 @@
         margin-left: 0.5rem;
       }
 
-      /* center header + align icon */
+      /* center header + align */
       .header { text-align: center; }
-      .header-right {
-        display: inline-flex;
-        align-items: baseline;
-      }
+      .header-right { display: inline-flex; align-items: baseline; }
       .header-right h3 { margin: 0; display: inline; }
 
-      /* mobile menu */
+      /* slide-down menu card */
       .mobile-menu {
         display: none;
         max-width: 300px;
@@ -70,28 +103,33 @@
       }
       .mobile-menu a:hover { background: rgba(0,150,199,0.1); }
 
-      /* tighten up lists for mobile */
-      .publications ol { margin-left: 1rem; }
+      /* shrink and center galleries */
+      .projects .gallery {
+        width: auto !important;
+        float: none !important;
+        margin: 1rem auto !important;
+      }
+      .projects .gallery img {
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+      }
+      .projects .desc { text-align: center; }
     }
   </style>
 </head>
 
 <body>
   <div class="container">
-
     <div class="header">
-      <!-- desktop nav -->
       <ul class="nav nav-pills pull-right">
-        <li class="passive"><a href="/projects">Projects</a></li>
-        <li><a href="/publications">Publications</a></li>
+        <li class="passive"><a href="/projects" style="text-transform: none;">Projects</a></li>
+        <li><a href="/publications" style="text-transform: none;">Publications</a></li>
         <li class="passive">
-          <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing">
-            CV
-          </a>
+          <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing"
+             style="text-transform: none;">CV</a>
         </li>
       </ul>
-
-      <!-- mobile header -->
       <div class="header-right">
         <h3 class="text-muted" style="text-transform: none;">
           <a href="/">Hemanth Sabbella</a>
@@ -100,37 +138,75 @@
       </div>
     </div>
 
-    <!-- mobile menu -->
     <ul class="mobile-menu" id="mobile-menu">
       <li><a href="/projects">Projects</a></li>
       <li><a href="/publications">Publications</a></li>
       <li>
-        <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing">
-          CV
-        </a>
+        <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing">CV</a>
       </li>
     </ul>
 
-    <div class="publications">
-      <p style="font-size: 21px; color: var(--ocean-primary);">Conferences &amp; Journals</p>
-      <hr>
-      <ol>
-        <li>
-          <p>
-            <span style="background-color: #5cb85c; color: white; padding:2px 4px; font-weight:bold;">
-              [IROS'24]
-            </span>
-            D. Rathnayake, <u>H. Sabbella</u>, M. Radhakrishnan, A. Misra,
-            <a href="https://ink.library.smu.edu.sg/sis_research/9230/" target="_blank">
-              "D2SR: Decentralized Detection, De-synchronization, and Recovery of LiDAR Interference",
-            </a>
-            <em>IEEE/RSJ IROS</em>, 2024.
-          </p>
-        </li>
-        <!-- …rest unchanged… -->
-      </ol>
-
-      <!-- Workshops, Posters, Patents unchanged… -->
+    <div class="projects">
+      <div class="gallery">
+        <a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/10494427">
+          <img src="/img/IMG_0244.jpeg" alt="PA2BLO">
+        </a>
+        <div class="desc">PA2BLO</div>
+      </div>
+      <div class="gallery">
+        <a target="_blank" href="http://u-Bat.github.io/">
+          <img src="/img/logo_ubat.png" alt="u-Bat">
+        </a>
+        <div class="desc">u-Bat</div>
+      </div>
+      <div class="gallery">
+        <a target="_blank" href="https://hemanthsabbella.github.io/pointSpectra/">
+          <img src="/img/pointSpectra.jpg" alt="pointSpectra">
+        </a>
+        <div class="desc">pointSpectra</div>
+      </div>
+      <div class="gallery">
+        <a target="_blank" href="https://arxiv.org/pdf/1911.09371.pdf">
+          <img src="/img/UDR_ADC.PNG" alt="UDR-ADC prototype">
+        </a>
+        <div class="desc">UDR-ADC prototype</div>
+      </div>
+      <div class="gallery">
+        <a target="_blank" href="https://github.com/HemanthSabbella/Dhvani">
+          <img src="/img/Dhvani.jpeg" alt="Dhvani">
+        </a>
+        <div class="desc">Dhvani</div>
+      </div>
+      <div class="gallery">
+        <a target="_blank" href="https://github.com/HemanthSabbella/Project_Reports/blob/master/MSD_project_final.pdf">
+          <img src="/img/MSD_project.png" alt="Gamma Brain Wave Filter">
+        </a>
+        <div class="desc">Gamma Brain Wave Filter</div>
+      </div>
+      <div class="gallery">
+        <a target="_blank" href="https://github.com/HemanthSabbella/Project_Reports/blob/master/SoC%20Presentation.pdf">
+          <img src="/img/Soc_project.png" alt="SoC Security">
+        </a>
+        <div class="desc">SoC Security: A logic level methodology to prevent differential power analysis</div>
+      </div>
+      <div class="gallery">
+        <a target="_blank" href="https://github.com/HemanthSabbella/Project_Reports/blob/master/robotics_ardrone.py">
+          <img src="/img/Red_ball.png" alt="Red Ball Detection">
+        </a>
+        <div class="desc">Red Ball Detection on Quadcopter</div>
+      </div>
+      <div class="gallery">
+        <a target="_blank" href="https://github.com/HemanthSabbella/PCBDesign/tree/master/EMI_sensing_board/LNA-Board(DL)">
+          <img src="/img/EMI.png" alt="EMI Sensing Board">
+        </a>
+        <div class="desc">EMI Sensing Board</div>
+      </div>
+      <div class="gallery">
+        <a target="_blank" href="https://github.com/HemanthSabbella/PCBDesign/tree/master/IIITDuino_hemanth">
+          <img src="/img/IIITDuino.PNG" alt="IIITDuino">
+        </a>
+        <div class="desc">IIITDuino</div>
+      </div>
     </div>
 
     <div class="footer">
@@ -139,7 +215,6 @@
         <div class="col-sm-4"><p class="pull-right"><small></small></p></div>
       </div>
     </div>
-
   </div>
 
   <script>
