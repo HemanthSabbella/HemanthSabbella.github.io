@@ -28,27 +28,27 @@
       text-decoration: underline;
     }
 
-    /* hide only the extra <hr> right after the header */
-    .header + hr {
-      display: none;
+    /* hide any stray <hr> without touching the header’s own border */
+    hr {
+      display: none !important;
     }
 
-    /* Desktop gallery layout unchanged */
+    /* Desktop gallery layout untouched */
     div.gallery {
       margin: 7px;
       margin-left: 30px;
-      border: 0px solid #ccc;
+      border: 0;
       float: left;
       width: 200px;
       height: 300px;
     }
     div.gallery:hover {
       --c: #1095c1;
-      color: #0000;
+      color: transparent;
       background:
         linear-gradient(90deg, #fff 50%, var(--c) 0) calc(100% - var(--_p, 0%)) / 200%,
         linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) no-repeat,
-        var(--_c, #0000);
+        var(--_c, transparent);
       background-clip: text, padding-box, padding-box;
       transition: 0s, color .5s, background-color .5s;
     }
@@ -70,8 +70,7 @@
     }
 
     /* hide mobile menu on desktop */
-    #menu-btn,
-    .mobile-menu {
+    #menu-btn, .mobile-menu {
       display: none;
     }
 
@@ -80,6 +79,7 @@
       .nav.nav-pills.pull-right {
         display: none !important;
       }
+
       /* hamburger */
       #menu-btn {
         display: inline-block !important;
@@ -91,7 +91,8 @@
         vertical-align: middle;
         margin-left: 0.5rem;
       }
-      /* center header */
+
+      /* center header + align icon */
       .header {
         text-align: center;
       }
@@ -103,6 +104,7 @@
         margin: 0;
         display: inline;
       }
+
       /* mobile menu card */
       .mobile-menu {
         display: none;
@@ -127,12 +129,13 @@
       .mobile-menu a:hover {
         background: rgba(0,150,199,0.1);
       }
+
       /* stack & auto-size galleries */
       .projects .gallery {
         width: auto !important;
         float: none !important;
-        margin: 2rem auto !important;
-        height: auto !important;
+        margin: 2rem auto !important;    /* consistent vertical gap */
+        height: auto !important;         /* caption height follows content */
       }
       .projects .gallery img {
         width: 80%;
@@ -150,12 +153,15 @@
   <div class="container">
     <div class="header">
       <ul class="nav nav-pills pull-right">
-        <li class="passive"><a href="/projects" style="text-transform: none;">Projects</a></li>
-        <li><a href="/publications" style="text-transform: none;">Publications</a></li>
         <li class="passive">
-          <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing" style="text-transform: none;">
-            CV
-          </a>
+          <a href="/projects" style="text-transform: none;">Projects</a>
+        </li>
+        <li>
+          <a href="/publications" style="text-transform: none;">Publications</a>
+        </li>
+        <li class="passive">
+          <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing"
+             style="text-transform: none;">CV</a>
         </li>
       </ul>
       <div class="header-right">
@@ -165,8 +171,8 @@
         <button id="menu-btn" aria-label="Menu">☰</button>
       </div>
     </div>
-    <!-- This <hr> (from your jumbotron or elsewhere) is now hidden by .header + hr -->
 
+    <!-- any <hr> tags here will now be hidden -->
     <!-- Mobile-only menu -->
     <ul class="mobile-menu" id="mobile-menu">
       <li><a href="/projects">Projects</a></li>
@@ -183,65 +189,54 @@
         </a>
         <div class="desc">PA2BLO</div>
       </div>
-
       <div class="gallery">
         <a target="_blank" href="http://u-Bat.github.io/">
           <img src="/img/logo_ubat.png" alt="u-Bat">
         </a>
         <div class="desc">u-Bat</div>
       </div>
-
       <div class="gallery">
         <a target="_blank" href="https://hemanthsabbella.github.io/pointSpectra/">
           <img src="/img/pointSpectra.jpg" alt="pointSpectra">
         </a>
         <div class="desc">pointSpectra</div>
       </div>
-
       <div class="gallery">
         <a target="_blank" href="https://arxiv.org/pdf/1911.09371.pdf">
           <img src="/img/UDR_ADC.PNG" alt="UDR-ADC prototype">
         </a>
         <div class="desc">UDR-ADC prototype</div>
       </div>
-
       <div class="gallery">
         <a target="_blank" href="https://github.com/HemanthSabbella/Dhvani">
           <img src="/img/Dhvani.jpeg" alt="Dhvani">
         </a>
         <div class="desc">Dhvani</div>
       </div>
-
       <div class="gallery">
         <a target="_blank" href="https://github.com/HemanthSabbella/Project_Reports/blob/master/MSD_project_final.pdf">
           <img src="/img/MSD_project.png" alt="Gamma Brain Wave Filter">
         </a>
         <div class="desc">Gamma Brain Wave Filter</div>
       </div>
-
       <div class="gallery">
         <a target="_blank" href="https://github.com/HemanthSabbella/Project_Reports/blob/master/SoC%20Presentation.pdf">
           <img src="/img/Soc_project.png" alt="SoC Security">
         </a>
-        <div class="desc">
-          Logic Level SoC Power Security
-        </div>
+        <div class="desc">Logic Level SoC Power Security</div>
       </div>
-
       <div class="gallery">
         <a target="_blank" href="https://github.com/HemanthSabbella/Project_Reports/blob/master/robotics_ardrone.py">
           <img src="/img/Red_ball.png" alt="Red Ball Detection on Quadcopter">
         </a>
         <div class="desc">Red Ball Detection on Quadcopter</div>
       </div>
-
       <div class="gallery">
         <a target="_blank" href="https://github.com/HemanthSabbella/PCBDesign/tree/master/EMI_sensing_board/LNA-Board(DL)">
           <img src="/img/EMI.png" alt="EMI Sensing Board">
         </a>
         <div class="desc">EMI Sensing Board</div>
       </div>
-
       <div class="gallery">
         <a target="_blank" href="https://github.com/HemanthSabbella/PCBDesign/tree/master/IIITDuino_hemanth">
           <img src="/img/IIITDuino.PNG" alt="IIITDuino">
@@ -252,7 +247,7 @@
 
     <div class="footer">
       <div class="row">
-        <div class="col-sm-8"><small></small></div>
+        <div class="col-sm-8"><p><small></small></p></div>
         <div class="col-sm-4"><p class="pull-right"><small></small></p></div>
       </div>
     </div>
