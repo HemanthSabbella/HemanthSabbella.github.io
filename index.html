@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <!-- Ensure media queries fire -->
+  <!-- Ensure mobile media queries work -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Hemanth's website.">
   <meta name="author" content="Hemanth Sabbella">
@@ -23,26 +23,28 @@
       color: var(--ocean-primary);
       text-decoration: none;
     }
-    a:hover, a:focus {
+    a:hover,
+    a:focus {
       color: var(--ocean-hover);
       text-decoration: underline;
     }
 
-    /* hide mobile-specific elements on desktop */
-    #menu-btn, .mobile-menu {
+    /* Hide mobile elements on desktop */
+    #menu-btn,
+    .mobile-menu {
       display: none;
     }
 
     @media only screen and (max-width: 768px) {
-      /* hide desktop nav-pills */
+      /* Hide desktop pills */
       .nav.nav-pills.pull-right {
         display: none !important;
       }
 
-      /* show a larger hamburger button */
+      /* Hamburger button */
       #menu-btn {
         display: inline-block !important;
-        font-size: 1.5em;          /* increased size */
+        font-size: 1.5em;            /* bigger */
         line-height: 1;
         background: none;
         border: none;
@@ -52,20 +54,20 @@
         margin-left: 0.5rem;
       }
 
-      /* center header contents */
+      /* Center header, align icon to text baseline */
       .header {
         text-align: center;
       }
       .header-right {
         display: inline-flex;
-        align-items: center;
+        align-items: baseline;
       }
       .header-right h3 {
         margin: 0;
         display: inline;
       }
 
-      /* mobile menu (hidden initially) */
+      /* Mobile menu: hidden until tapped */
       .mobile-menu {
         display: none;
         list-style: none;
@@ -79,14 +81,14 @@
         color: var(--ocean-primary);
         text-decoration: none;
         display: block;
-        font-size: 1rem;  /* same as desktop text */
+        font-size: 1rem; /* same as desktop */
       }
       .mobile-menu a:hover {
         color: var(--ocean-hover);
         text-decoration: underline;
       }
 
-      /* center avatar & contact icons */
+      /* Center avatar & contacts */
       .row.marketing .col-sm-4 {
         text-align: center;
         margin: 0 auto;
@@ -99,7 +101,7 @@
 <body>
   <div class="container">
     <div class="header">
-      <!-- desktop nav-pills unchanged -->
+      <!-- Desktop nav-pills (unchanged) -->
       <ul class="nav nav-pills pull-right">
         <li><a href="/projects" style="text-transform: none;">Projects</a></li>
         <li><a href="/publications" style="text-transform: none;">Publications</a></li>
@@ -109,7 +111,7 @@
         </li>
       </ul>
 
-      <!-- desktop name + hidden-by-default hamburger -->
+      <!-- Mobile header: your name + hamburger -->
       <div class="header-right">
         <h3 class="text-muted" style="text-transform: none;">
           <a href="/">Hemanth Sabbella</a>
@@ -118,7 +120,7 @@
       </div>
     </div> <!-- /header -->
 
-    <!-- mobile-only menu -->
+    <!-- Mobile menu (toggled) -->
     <ul class="mobile-menu" id="mobile-menu">
       <li><a href="/projects">Projects</a></li>
       <li><a href="/publications">Publications</a></li>
@@ -129,6 +131,7 @@
       </li>
     </ul>
 
+    <!-- Rest of your original index.html content -->
     <div class="row marketing">
       <div class="col-sm-4">
         <img class="img-circle avatar" width="200" height="200" alt="Hemanth Sabbella"
@@ -154,7 +157,6 @@
           </p>
         </span>
       </div>
-
       <div itemscope itemtype="http://data-vocabulary.org/Person" class="col-sm-8">
         <p>
           Hi, I'm Hemanth Sabbella, a first year PhD student at SCIS,
@@ -162,14 +164,14 @@
           advised by Prof. Archan Misra and Prof. Dong Ma. Currently a visiting student at M3S,
           under <a href="https://m3s.mit.edu/our-team/hemant-sebbal">MIT's SMART Program</a>
         </p>
-        <!-- rest of your original content unchanged -->
+        <!-- …other paragraphs unchanged… -->
       </div>
     </div>
 
     <div class="row marketing">
       <p style="font-size:21px; color:var(--ocean-primary);">Highlights:</p>
       <ul style="list-style:none; padding:0; margin:0;">
-        <!-- …your highlight items… -->
+        <!-- …your highlights… -->
       </ul>
     </div>
 
@@ -178,11 +180,11 @@
         <div class="col-sm-8"><p><small></small></p></div>
         <div class="col-sm-4"><p class="pull-right"><small></small></p></div>
       </div>
-    </div><!-- /footer -->
-  </div><!-- /container -->
+    </div> <!-- /footer -->
+  </div> <!-- /container -->
 
   <script>
-    // toggle mobile menu visibility
+    // Toggle mobile menu
     document.getElementById('menu-btn').addEventListener('click', function() {
       var m = document.getElementById('mobile-menu');
       m.style.display = (m.style.display === 'block' ? 'none' : 'block');
