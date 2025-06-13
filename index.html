@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" width="device-width, initial-scale=1.0">
+  <!-- Corrected viewport meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Hemanth's website.">
   <meta name="author" content="Hemanth Sabbella">
   <meta property="og:image" content="img/hemanth_percom.jpg" />
@@ -28,6 +29,45 @@
     a:focus {
       color: var(--ocean-hover);
       text-decoration: underline;
+    }
+
+    /* Mobile-only overrides */
+    @media only screen and (max-width: 768px) {
+      /* Container padding */
+      .container { padding: 0 1rem; }
+
+      /* Fluid images & avatar */
+      img, .avatar {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Stack nav pills vertically */
+      .nav.nav-pills.pull-right {
+        float: none !important;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav.nav-pills.pull-right li {
+        margin: 0.5rem 0;
+      }
+
+      /* Center and resize avatar */
+      .avatar {
+        margin: 1rem auto;
+        display: block;
+        width: 50%;
+      }
+
+      /* Remove default list indent on highlights */
+      .row.marketing ul {
+        padding-left: 0;
+      }
+
+      /* Fluid typography */
+      h1 { font-size: clamp(1.5rem, 5vw, 2.5rem); }
+      p  { font-size: clamp(1rem, 3vw, 1.125rem); }
     }
   </style>
 </head>
