@@ -28,12 +28,12 @@
       text-decoration: underline;
     }
 
-    /* hide any stray <hr> without touching the header’s own border */
-    hr {
+    /* hide any <hr> that lives directly under .container (the extra line) */
+    .container > hr {
       display: none !important;
     }
 
-    /* Desktop gallery layout untouched */
+    /* Desktop gallery layout unchanged */
     div.gallery {
       margin: 7px;
       margin-left: 30px;
@@ -70,7 +70,8 @@
     }
 
     /* hide mobile menu on desktop */
-    #menu-btn, .mobile-menu {
+    #menu-btn,
+    .mobile-menu {
       display: none;
     }
 
@@ -134,8 +135,8 @@
       .projects .gallery {
         width: auto !important;
         float: none !important;
-        margin: 2rem auto !important;    /* consistent vertical gap */
-        height: auto !important;         /* caption height follows content */
+        margin: 2rem auto !important;
+        height: auto !important;
       }
       .projects .gallery img {
         width: 80%;
@@ -153,12 +154,8 @@
   <div class="container">
     <div class="header">
       <ul class="nav nav-pills pull-right">
-        <li class="passive">
-          <a href="/projects" style="text-transform: none;">Projects</a>
-        </li>
-        <li>
-          <a href="/publications" style="text-transform: none;">Publications</a>
-        </li>
+        <li class="passive"><a href="/projects" style="text-transform: none;">Projects</a></li>
+        <li><a href="/publications" style="text-transform: none;">Publications</a></li>
         <li class="passive">
           <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing"
              style="text-transform: none;">CV</a>
@@ -172,7 +169,8 @@
       </div>
     </div>
 
-    <!-- any <hr> tags here will now be hidden -->
+    <!-- any <hr> here will now be hidden by the .container > hr rule -->
+
     <!-- Mobile-only menu -->
     <ul class="mobile-menu" id="mobile-menu">
       <li><a href="/projects">Projects</a></li>
@@ -223,7 +221,7 @@
         <a target="_blank" href="https://github.com/HemanthSabbella/Project_Reports/blob/master/SoC%20Presentation.pdf">
           <img src="/img/Soc_project.png" alt="SoC Security">
         </a>
-        <div class="desc">Logic Level SoC Power Security</div>
+        <div class="desc">SoC Security: A logic level methodology to prevent differential power analysis</div>
       </div>
       <div class="gallery">
         <a target="_blank" href="https://github.com/HemanthSabbella/Project_Reports/blob/master/robotics_ardrone.py">
