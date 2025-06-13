@@ -29,44 +29,45 @@
       text-decoration: underline;
     }
 
-    /* Hide mobile menu and button by default */
+    /* hide mobile menu and button by default */
     .mobile-menu,
     #menu-btn {
       display: none;
     }
 
-    /* Desktop nav remains unchanged */
     @media only screen and (max-width: 768px) {
-      /* Hide desktop pills */
+      /* hide desktop nav-pills */
       .nav.nav-pills.pull-right {
         display: none !important;
       }
 
-      /* Show hamburger */
+      /* show hamburger button */
       #menu-btn {
         display: inline-block;
-        font-size: 1.5rem;
+        font-size: 1em;           /* match the h3 text size */
+        line-height: 1;           /* square button */
         background: none;
         border: none;
         color: var(--ocean-primary);
         cursor: pointer;
+        vertical-align: middle;   /* align with the text */
         margin-left: 0.5rem;
       }
 
-      /* Flex container for name + button */
-      .header h3 {
-        display: inline-block;
-        margin: 0;
-      }
+      /* center header contents */
       .header {
         text-align: center;
       }
-      .header .header-right {
+      .header-right {
         display: inline-flex;
         align-items: center;
       }
+      .header h3 {
+        margin: 0;
+        display: inline;
+      }
 
-      /* Mobile menu */
+      /* mobile menu styling */
       .mobile-menu {
         display: block;
         list-style: none;
@@ -80,14 +81,14 @@
         color: var(--ocean-primary);
         text-decoration: none;
         display: block;
-        font-size: 1rem; /* same as desktop */
+        font-size: 1rem; /* same as desktop text */
       }
       .mobile-menu a:hover {
         color: var(--ocean-hover);
         text-decoration: underline;
       }
 
-      /* Center avatar & contact on mobile */
+      /* center avatar & contacts */
       .row.marketing .col-sm-4 {
         text-align: center;
         margin: 0 auto;
@@ -100,19 +101,19 @@
 <body>
   <div class="container">
     <div class="header">
-      <!-- desktop pills unchanged -->
+      <!-- original desktop nav -->
       <ul class="nav nav-pills pull-right">
-        <li><a href="/projects" title="Projects" style="text-transform: none;">Projects</a></li>
-        <li><a href="/publications" title="Publications" style="text-transform: none;">Publications</a></li>
+        <li><a href="/projects" style="text-transform: none;">Projects</a></li>
+        <li><a href="/publications" style="text-transform: none;">Publications</a></li>
         <li class="passive">
           <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing"
-             title="CV" style="text-transform: none;">CV</a>
+             style="text-transform: none;">CV</a>
         </li>
       </ul>
 
       <!-- mobile header: name + hamburger -->
       <div class="header-right">
-        <h3 class="text-muted" style="text-transform: none; display:inline;">
+        <h3 class="text-muted" style="text-transform: none;">
           <a href="/">Hemanth Sabbella</a>
         </h3>
         <button id="menu-btn" aria-label="Menu">☰</button>
@@ -189,7 +190,7 @@
     <div class="row marketing">
       <p style="font-size:21px; color:var(--ocean-primary);">Highlights:</p>
       <ul style="list-style:none; padding:0; margin:0;">
-<li style="margin:0.5em 0;">
+          <li style="margin:0.5em 0;">
           💼 <strong>05-2025:</strong> Started as a Visiting Student at Singapore-MIT Alliance for
           Research and Technology Center with
           <a href="https://m3s.mit.edu/">Mens, Manus and Machina (M3S)</a> Group
@@ -258,9 +259,8 @@
 
   </div><!-- /container -->
 
-  <!-- javascript -->
   <script>
-    // toggle mobile menu
+    // toggle mobile menu visibility
     document.getElementById('menu-btn').addEventListener('click', function() {
       var menu = document.getElementById('mobile-menu');
       menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
