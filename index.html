@@ -29,12 +29,47 @@
       color: var(--ocean-hover);
       text-decoration: underline;
     }
+
+    /* mobile menu: hidden by default */
+    .mobile-menu {
+      display: none;
+    }
+
+    /* mobile-only overrides */
+    @media only screen and (max-width: 768px) {
+      /* hide desktop nav */
+      .nav.nav-pills.pull-right {
+        display: none !important;
+      }
+      /* show mobile menu */
+      .mobile-menu {
+        display: block;
+        list-style: none;
+        margin: 1rem 0;
+        padding: 0;
+      }
+      .mobile-menu li + li {
+        margin-top: 0.75rem;
+      }
+      .mobile-menu a {
+        color: var(--ocean-primary);
+        text-decoration: none;
+        display: block;
+        /* text-size remains as in desktop */
+      }
+      .mobile-menu a:hover,
+      .mobile-menu a:focus {
+        color: var(--ocean-hover);
+        text-decoration: underline;
+      }
+    }
   </style>
 </head>
 
 <body>
   <div class="container">
     <div class="header">
+      <!-- desktop nav-pills (unchanged) -->
       <ul class="nav nav-pills pull-right">
         <li><a href="/projects" title="Projects" style="text-transform: none;">Projects</a></li>
         <li><a href="/publications" title="Publications" style="text-transform: none;">Publications</a></li>
@@ -43,6 +78,18 @@
              title="CV" style="text-transform: none;">CV</a>
         </li>
       </ul>
+
+      <!-- mobile-only menu -->
+      <ul class="mobile-menu">
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li>
+          <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing">
+            CV
+          </a>
+        </li>
+      </ul>
+
       <h3 class="text-muted" style="text-transform: none;">
         <a href="/">Hemanth Sabbella</a>
       </h3>
