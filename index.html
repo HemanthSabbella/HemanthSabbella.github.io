@@ -2,200 +2,400 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <!-- Ensure mobile media queries work -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hemanth's website.">
+  <meta name="author" content="Hemanth Sabbella">
+  <meta property="og:image" content="img/hemanth_percom.jpg" />
   <title>About | Hemanth</title>
 
+  <!-- styles -->
   <link href="/css/bootstrap.css" rel="stylesheet">
+  <link href="/css/jumbotron-narrow.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
 
   <style>
     :root {
       --ocean-primary: #0096C7;
-      --ocean-hover: #006494;
-      --timeline-green: #5cb85c;
+      --ocean-hover:   #006494;
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
     a {
       color: var(--ocean-primary);
       text-decoration: none;
     }
-
-    a:hover {
+    a:hover, a:focus {
       color: var(--ocean-hover);
       text-decoration: underline;
     }
 
+    /* Center avatar & contact icons on desktop */
     .row.marketing .col-sm-4 {
       text-align: center;
     }
 
-    /* HASHTAGS */
-    .hashtags {
-      margin-top: 10px;
-      font-size: 14px;
-      text-align: left;
-      line-height: 1.6;
+    /* Hide mobile-specific elements on desktop */
+    #menu-btn,
+    .mobile-menu {
+      display: none;
     }
 
-    /* TIMELINE */
-    .timeline-section {
-      max-width: 1000px;
-      margin: 5px auto 30px auto; /* tight spacing */
-      padding: 0 20px;
-    }
-
-    .timeline-section h2 {
-      text-align: left;
-      margin-bottom: 20px;
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: var(--ocean-primary);
-    }
-
-    .timeline-horizontal {
-      display: flex;
-      gap: 20px;
-      position: relative;
-    }
-
-    /* GREEN LINE */
-    .timeline-horizontal::before {
-      content: '';
-      position: absolute;
-      top: 15px;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: var(--timeline-green);
-    }
-
-    .timeline-item {
-      flex: 1;
-      text-align: center;
-      position: relative;
-    }
-
-    /* BLACK DOTS */
-    .dot {
-      width: 12px;
-      height: 12px;
-      background: #222;
-      border-radius: 50%;
-      margin: 0 auto 12px auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .timeline-item h3 {
-      font-size: 1rem;
-      margin-bottom: 6px;
-    }
-
-    .timeline-item p {
-      font-size: 0.9rem;
-      color: #555;
-      margin: 0;
-    }
-
-    /* MOBILE */
-    @media (max-width: 768px) {
-      .timeline-horizontal {
-        flex-direction: column;
+    @media only screen and (max-width: 768px) {
+      /* Hide desktop nav-pills */
+      .nav.nav-pills.pull-right {
+        display: none !important;
       }
 
-      .timeline-horizontal::before {
-        display: none;
+      /* Hamburger button */
+      #menu-btn {
+        display: inline-block !important;
+        font-size: 1.5em;
+        line-height: 1;
+        background: none;
+        border: none;
+        color: var(--ocean-primary);
+        cursor: pointer;
+        vertical-align: middle;
+        margin-left: 0.5rem;
       }
 
-      .timeline-item {
-        text-align: left;
+      /* Center header + align icon */
+      .header {
+        text-align: center;
+      }
+      .header-right {
+        display: inline-flex;
+        align-items: baseline;
+      }
+      .header-right h3 {
+        margin: 0;
+        display: inline;
       }
 
-      .dot {
-        margin-left: 0;
+      /* Mobile menu card */
+      .mobile-menu {
+        display: none; /* hidden until tapped */
+        max-width: 300px;
+        margin: 0.75rem auto 1.5rem;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        list-style: none;
+        padding: 0;
+      }
+      .mobile-menu li + li {
+        border-top: 1px solid #eee;
+      }
+      .mobile-menu a {
+        display: block;
+        padding: 1rem 1.25rem;
+        font-size: 1.25rem;
+        color: var(--ocean-primary);
+      }
+      .mobile-menu a:hover {
+        background: rgba(0,150,199,0.1);
       }
     }
   </style>
 </head>
 
 <body>
-<div class="container">
+  <div class="container">
 
-  <div class="row marketing">
+    <div class="header">
+      <!-- Desktop nav-pills (unchanged) -->
+      <ul class="nav nav-pills pull-right">
+        <li><a href="/projects" style="text-transform: none;">Projects</a></li>
+        <li><a href="/publications" style="text-transform: none;">Publications</a></li>
+        <li class="passive">
+          <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing"
+             style="text-transform: none;">CV</a>
+        </li>
+      </ul>
 
-    <!-- LEFT COLUMN -->
-    <div class="col-sm-4">
-      <img class="img-circle" width="200" src="img/hemanth_w_400.jpg">
-
-      <p>
-        <a href="mailto:shrsabbella.2024@phdcs.smu.edu.sg">Email</a>
-      </p>
-
-      <p>
-        <a href="https://www.linkedin.com/in/hemanthsabbella/">LinkedIn</a>
-      </p>
-
-      <p>
-        <a href="https://scholar.google.com/citations?user=KPyLReEAAAAJ&hl=en">
-          Google Scholar
-        </a>
-      </p>
-
-      <!-- HASHTAGS -->
-      <div class="hashtags">
-        #neuromorphicAI #spikingneuralnetworks #wearablecomputing #lowpowersystems #tinyML
+      <!-- Mobile header: name + hamburger -->
+      <div class="header-right">
+        <h3 class="text-muted" style="text-transform: none;">
+          <a href="/">Hemanth Sabbella</a>
+        </h3>
+        <button id="menu-btn" aria-label="Menu">☰</button>
       </div>
+    </div> <!-- /header -->
+
+    <!-- Mobile-only menu -->
+    <ul class="mobile-menu" id="mobile-menu">
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/publications">Publications</a></li>
+      <li>
+        <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing">CV</a>
+      </li>
+    </ul>
+
+    <div class="row marketing">
+      <div class="col-sm-4">
+        <img class="img-circle avatar" width="200" height="200" alt="Hemanth Sabbella"
+             src="img/hemanth_w_400.jpg">
+        <p>
+          <img src="https://img.icons8.com/windows/32/000000/email-open.png"
+               style="width:23px; height:23px; vertical-align:middle;">
+          <a href="mailto:shrsabbella.2024@phdcs.smu.edu.sg">Email</a>
+        </p>
+        <p>
+          <img src="https://img.icons8.com/ios-filled/344/linkedin-2--v1.png"
+               style="width:22px; height:22px; vertical-align:middle;">
+          <a href="https://www.linkedin.com/in/hemanthsabbella/">LinkedIn</a>
+        </p>
+        <p>
+          <img src="https://img.icons8.com/material-two-tone/344/google-scholar.png"
+               style="width:25px; height:25px; vertical-align:middle;">
+          <a href="https://scholar.google.com/citations?user=KPyLReEAAAAJ&amp;hl=en">Google Scholar</a>
+          <p style="font-size: 0.9em;">
+</p>
+
+    </a>
+  </span>
+       </span> <span itemprop="hashtags"><p style="margin-top:10px; font-size:14px;"> #neuromorphicAI #spikingneuralnetworks #wearablecomputing #lowpowersystems #tinyML </p> </span>
+
+      </div>
+
+      <div itemscope itemtype="http://data-vocabulary.org/Person" class="col-sm-8">
+      <p>
+        Hi, I'm Hemanth Sabbella, a second-year PhD candidate at SCIS,
+        <a href="https://computing.smu.edu.sg/">Singapore Management University (SMU)</a>,
+        advised by Prof. Archan Misra. I am also a visiting student at the Mens, Manus, and Machina (M3S) group under
+        <a href="https://m3s.mit.edu/our-team/hemant-sebbal">MIT's SMART Program</a>.
+      </p>
+    
+      <p>
+        My research focuses on neuromorphic computing and spiking neural networks, with an emphasis on temporal characteristics and energy efficiency for applications in robotics and ubiquitous systems.
+      </p>
+    
+      <p>
+        I completed my undergraduate studies in Electronics and Communications Engineering from
+        <span itemprop="affiliation">
+          <a href="https://www.iiitd.ac.in/">IIIT-Delhi</a>
+        </span>.
+        I then worked as a Senior Project Associate at
+        <a href="https://www.iisc.ac.in/">Indian Institute of Science (IISc)</a>,
+        where I worked on low-power sensing and embedded AI systems, followed by a role as a Research Engineer at SMU.
+      </p>
+    
+      <p>
+        Outside research, I enjoy photography (featured in National Geographic, see
+        <a href="https://www.instagram.com/foto.obscura/">@foto.obscura</a>), reading non-fiction, and exploring diverse cuisines.
+      </p>
     </div>
 
-    <!-- RIGHT COLUMN -->
-    <div class="col-sm-8">
-      <p>
-        Hi, I'm Hemanth Sabbella, a PhD candidate at SMU.
-      </p>
+      <section class="timeline-section">
+  <h2 style="color:var(--ocean-primary);">Recent Highlights</h2>
 
+  <div class="timeline-horizontal">
+
+    <div class="timeline-item">
+      <div class="dot"></div>
+      <h3>Dec 2025</h3>
+      <p>Passed PhD Qualifying Exam; officially a PhD candidate.</p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="dot"></div>
+      <h3>Oct 2025</h3>
       <p>
-        My research focuses on neuromorphic computing and spiking neural networks.
+        Guest Talk at AI and Humanity Hub, Loughborough University —
+        <em>On the Temporal Characteristics of Spiking Neural Networks</em>
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="dot"></div>
+      <h3>May 2025</h3>
+      <p>
+        Visiting Student at SMART (MIT), M3S Group.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="dot"></div>
+      <h3>Jan 2025</h3>
+      <p>
+        Workshop paper accepted at <strong>CoMoRea’25</strong> (PerCom 2025).
       </p>
     </div>
 
   </div>
+</section>
 
-  <!-- TIMELINE -->
-  <section class="timeline-section">
-    <h2>Recent Highlights</h2>
+<style>
+.timeline-section {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+}
 
-    <div class="timeline-horizontal">
+/* LEFT-ALIGNED HEADING */
+.timeline-section h2 {
+  text-align: left;      /* changed */
+  margin-bottom: 30px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #222;
+}
 
-      <div class="timeline-item">
-        <div class="dot"></div>
-        <h3>Dec 2025</h3>
-        <p>Passed PhD Qualifying Exam</p>
+/* horizontal line */
+.timeline-horizontal {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+
+.timeline-horizontal::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #5cb85c;  /* green line */
+  z-index: 0;
+}
+
+/* items */
+.timeline-item {
+  position: relative;
+  width: 22%;
+  text-align: center;
+}
+
+/* dots */
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #222;  /* match line */
+  border-radius: 50%;
+  margin: 0 auto 15px auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* text */
+.timeline-item h3 {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.timeline-item p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* responsive */
+@media screen and (max-width: 768px) {
+  .timeline-horizontal {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .timeline-horizontal::before {
+    display: none;
+  }
+
+  .timeline-item {
+    width: 100%;
+    text-align: left;  /* better for mobile */
+  }
+
+  .dot {
+    margin-left: 0;
+  }
+}
+</style>
+      
+    <!-- <div class="row marketing">
+      <p style="font-size:21px; color:var(--ocean-primary);">Highlights:</p>
+      <ul style="list-style:none; padding:0; margin:0;">
+         <li style="margin:0.5em 0;">
+          <strong>12-2025:</strong> Passed PhD Qualifying Exam, offically a PhD candidate now!
+        </li>
+       <li style="margin:0.5em 0;">
+          <strong>10-2025:</strong> Guest Talk at the 
+          <a href="https://www.lborolondon.ac.uk/research-innovation/hubs/">AI and Humanity Hub, Loughborough University</a> — 
+          “On the Temporal Characteristics of Spiking Neural Networks: Fast and Efficient Neuromorphic AI”
+        </li>
+        <li style="margin:0.5em 0;">
+          <strong>05-2025:</strong> Started as a Visiting Student at Singapore-MIT Alliance for
+          Research and Technology Center with
+          <a href="https://m3s.mit.edu/">Mens, Manus and Machina (M3S)</a> Group
+        </li>
+        <li style="margin:0.5em 0;">
+          <strong>01-2025:</strong> Workshop paper got accepted at
+          <a href="https://sites.google.com/view/comorea25/accepted-papers">CoMoRea’25</a>
+          collocated with PerCom 2025
+        </li>
+        <li style="margin:0.5em 0;">
+          <strong>08-2024:</strong> Joined as a Ph.D. student at SCIS, SMU
+        </li>
+        <li style="margin:0.5em 0;">
+          <strong>07-2024:</strong> Our paper ‘D2SR’ got accepted in IROS 2024
+        </li>
+        <li style="margin:0.5em 0;">
+          <strong>03-2024:</strong> Patent on Metal Nanoparticles Synthesis is granted
+        </li>
+        <li style="margin:0.5em 0;">
+          <strong>12-2023:</strong> Full paper got accepted at
+          <a href="https://percom.org/2024/full-program/">PerCom 2024</a> [Acceptance rate: 14.5%]
+        </li>
+        <li style="margin:0.5em 0;">
+          <strong>03-2023:</strong> A conference paper I co-authored got accepted at ACM MMSys 2023
+          [Acceptance rate: 25%]
+        </li>
+        <li style="margin:0.5em 0;">
+          <strong>07-2022:</strong> Journal paper got accepted at IEEE Sensors Journal
+          [Impact factor: 4.3]
+        </li>
+        <li style="margin:0.5em 0;">
+          <strong>04-2022:</strong>
+          <a href="https://u-bat.github.io/deployment">u-Bat</a> was planned for deployment to detect
+          timber logging at Dehing Patkai National Park, Assam, India [IISc & WCS collaboration]
+        </li>
+        <li style="margin:0.5em 0;">
+          <strong>01-2022:</strong> Our paper got accepted at ISCAS 2022 [Flagship Conference of the IEEE CAS Society]
+        </li>
+        <li style="margin:0.5em 0;">
+          <strong>11-2021:</strong> Video Poster got accepted at
+          <a href="https://www.youtube.com/watch?v=ZgiX-gDikhg">tinyML Asia Technical Forum 2021</a>
+        </li>
+        <li style="margin:0.5em 0;">
+         <strong>11-2019:</strong> Selected for
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:6590407853843017728/">MIT Hacking Medicine, Grand Hack 2019</a>, USA
+        </li>
+        <li style="margin:0.5em 0;">
+         <strong>10-2019:</strong>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:6581763632495988736/">All India Winning Team</a> – Hackware 2019, Schneider Electric Innovation Challenge
+        </li>
+      </ul>
+    </div> -->
+
+    <!-- <div class="footer">
+      <div class="row">
+        <div class="col-sm-8"><p><small></small></p></div>
+        <div class="col-sm-4"><p class="pull-right"><small></small></p></div>
       </div>
+    </div> <!-- /footer -->
 
-      <div class="timeline-item">
-        <div class="dot"></div>
-        <h3>Oct 2025</h3>
-        <p>Guest Talk at Loughborough University</p>
-      </div>
+  </div> <!-- /container -->
 
-      <div class="timeline-item">
-        <div class="dot"></div>
-        <h3>May 2025</h3>
-        <p>Visiting Student at SMART (MIT)</p>
-      </div>
-
-      <div class="timeline-item">
-        <div class="dot"></div>
-        <h3>Jan 2025</h3>
-        <p>Paper accepted at CoMoRea’25</p>
-      </div>
-
-    </div>
-  </section>
-
-</div>
+  <script>
+    // Toggle mobile menu
+    document.getElementById('menu-btn').addEventListener('click', function() {
+      var menu = document.getElementById('mobile-menu');
+      menu.style.display = (menu.style.display === 'block' ? 'none' : 'block');
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/library.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js"></script>
 </body>
 </html>
