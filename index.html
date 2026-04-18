@@ -292,22 +292,54 @@
 
 /* responsive */
 @media screen and (max-width: 768px) {
+
+  /* make layout vertical */
   .timeline-horizontal {
     flex-direction: column;
-    gap: 30px;
+    gap: 35px;
+    padding-left: 25px; /* space for vertical line */
   }
 
+  /* vertical line */
   .timeline-horizontal::before {
-    display: none;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 6px;
+    width: 2px;
+    height: auto;
+    background: #5cb85c; /* keep your green */
   }
 
+  /* items */
   .timeline-item {
     width: 100%;
-    text-align: left;  /* better for mobile */
+    text-align: left;
+    padding-left: 15px;
   }
 
+  /* dots aligned to vertical line */
   .dot {
-    margin-left: 0;
+    position: absolute;
+    left: -4px;
+    margin: 0;
+  }
+
+  /* bigger text for mobile */
+  .timeline-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  .timeline-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* slightly bigger dots */
+  .dot {
+    width: 14px;
+    height: 14px;
   }
 }
 </style>
