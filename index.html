@@ -189,6 +189,121 @@
         <a href="https://www.instagram.com/foto.obscura/">@foto.obscura</a>), reading non-fiction, and exploring diverse cuisines.
       </p>
     </div>
+      <section class="timeline-section">
+  <h2>Recent Highlights</h2>
+
+  <div class="timeline-horizontal">
+
+    <div class="timeline-item">
+      <div class="dot"></div>
+      <h3>Dec 2025</h3>
+      <p>Passed PhD Qualifying Exam; officially a PhD candidate.</p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="dot"></div>
+      <h3>Oct 2025</h3>
+      <p>
+        Guest Talk at AI and Humanity Hub, Loughborough University —
+        <em>Temporal Characteristics of SNNs</em>
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="dot"></div>
+      <h3>May 2025</h3>
+      <p>
+        Visiting Student at SMART (MIT), M3S Group.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="dot"></div>
+      <h3>Jan 2025</h3>
+      <p>
+        Workshop paper accepted at <strong>CoMoRea’25</strong> (PerCom 2025).
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.timeline-section {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.timeline-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* horizontal line */
+.timeline-horizontal {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+
+.timeline-horizontal::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #ccc;
+  z-index: 0;
+}
+
+/* items */
+.timeline-item {
+  position: relative;
+  width: 22%;
+  text-align: center;
+}
+
+/* dots */
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #222;
+  border-radius: 50%;
+  margin: 0 auto 15px auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* text */
+.timeline-item h3 {
+  margin-bottom: 8px;
+}
+
+.timeline-item p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* responsive (stack if small screen) */
+@media screen and (max-width: 768px) {
+  .timeline-horizontal {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .timeline-horizontal::before {
+    display: none;
+  }
+
+  .timeline-item {
+    width: 100%;
+  }
+}
+</style>
       
     <!-- <div class="row marketing">
       <p style="font-size:21px; color:var(--ocean-primary);">Highlights:</p>
