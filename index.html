@@ -190,7 +190,7 @@
       </p>
     </div>
 
-<section class="timeline-section">
+      <section class="timeline-section">
   <h2>Recent Highlights</h2>
 
   <div class="timeline-horizontal">
@@ -236,10 +236,11 @@
   padding: 20px;
 }
 
+/* LEFT-ALIGNED HEADING */
 .timeline-section h2 {
-  text-align: center;
+  text-align: left;      /* changed */
   margin-bottom: 30px;
-  font-size: 1.3rem;   /* smaller heading */
+  font-size: 1.3rem;
   font-weight: 500;
   color: #222;
 }
@@ -306,6 +307,11 @@
 
   .timeline-item {
     width: 100%;
+    text-align: left;  /* better for mobile */
+  }
+
+  .dot {
+    margin-left: 0;
   }
 }
 </style>
