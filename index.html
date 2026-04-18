@@ -3,14 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Hemanth's website.">
-  <meta name="author" content="Hemanth Sabbella">
-  <meta property="og:image" content="img/hemanth_percom.jpg" />
   <title>About | Hemanth</title>
 
   <link href="/css/bootstrap.css" rel="stylesheet">
-  <link href="/css/jumbotron-narrow.css" rel="stylesheet">
-  <link href="/css/style.css" rel="stylesheet">
 
   <style>
     :root {
@@ -28,8 +23,7 @@
       text-decoration: none;
     }
 
-    a:hover,
-    a:focus {
+    a:hover {
       color: var(--ocean-hover);
       text-decoration: underline;
     }
@@ -38,44 +32,24 @@
       text-align: center;
     }
 
-    #menu-btn,
-    .mobile-menu {
-      display: none;
-    }
-
-    .research-block {
-      display: block;
-      text-align: left;
-      margin-top: 14px;
-    }
-
-    .research-block h2 {
+    /* HASHTAGS */
+    .hashtags {
       margin-top: 10px;
-      margin-bottom: 6px;
       font-size: 14px;
-      color: var(--ocean-primary);
       text-align: left;
-      font-weight: 600;
-    }
-
-    .research-block p {
-      margin-top: 0;
-      margin-bottom: 0;
-      font-size: 14px;
       line-height: 1.6;
-      text-align: left;
     }
 
+    /* TIMELINE */
     .timeline-section {
       max-width: 1000px;
-      margin: 50px auto;
-      padding: 20px;
-      box-sizing: border-box;
+      margin: 5px auto 30px auto; /* tight spacing */
+      padding: 0 20px;
     }
 
     .timeline-section h2 {
       text-align: left;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       font-size: 1.3rem;
       font-weight: 500;
       color: var(--ocean-primary);
@@ -83,12 +57,11 @@
 
     .timeline-horizontal {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      position: relative;
       gap: 20px;
+      position: relative;
     }
 
+    /* GREEN LINE */
     .timeline-horizontal::before {
       content: '';
       position: absolute;
@@ -97,99 +70,40 @@
       right: 0;
       height: 2px;
       background: var(--timeline-green);
-      z-index: 0;
     }
 
     .timeline-item {
-      position: relative;
       flex: 1;
-      min-width: 0;
       text-align: center;
+      position: relative;
     }
 
+    /* BLACK DOTS */
     .dot {
       width: 12px;
       height: 12px;
-      background: var(--timeline-green);
+      background: #222;
       border-radius: 50%;
-      margin: 0 auto 15px auto;
+      margin: 0 auto 12px auto;
       position: relative;
       z-index: 1;
     }
 
     .timeline-item h3 {
-      margin-bottom: 8px;
       font-size: 1rem;
+      margin-bottom: 6px;
     }
 
     .timeline-item p {
       font-size: 0.9rem;
       color: #555;
-      line-height: 1.4;
       margin: 0;
     }
 
-    @media only screen and (max-width: 768px) {
-      .nav.nav-pills.pull-right {
-        display: none !important;
-      }
-
-      #menu-btn {
-        display: inline-block !important;
-        font-size: 1.5em;
-        line-height: 1;
-        background: none;
-        border: none;
-        color: var(--ocean-primary);
-        cursor: pointer;
-        vertical-align: middle;
-        margin-left: 0.5rem;
-      }
-
-      .header {
-        text-align: center;
-      }
-
-      .header-right {
-        display: inline-flex;
-        align-items: baseline;
-      }
-
-      .header-right h3 {
-        margin: 0;
-        display: inline;
-      }
-
-      .mobile-menu {
-        display: none;
-        max-width: 300px;
-        margin: 0.75rem auto 1.5rem;
-        background: #fff;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        list-style: none;
-        padding: 0;
-      }
-
-      .mobile-menu li + li {
-        border-top: 1px solid #eee;
-      }
-
-      .mobile-menu a {
-        display: block;
-        padding: 1rem 1.25rem;
-        font-size: 1.25rem;
-        color: var(--ocean-primary);
-      }
-
-      .mobile-menu a:hover {
-        background: rgba(0,150,199,0.1);
-      }
-
+    /* MOBILE */
+    @media (max-width: 768px) {
       .timeline-horizontal {
         flex-direction: column;
-        gap: 30px;
       }
 
       .timeline-horizontal::before {
@@ -197,151 +111,91 @@
       }
 
       .timeline-item {
-        width: 100%;
         text-align: left;
       }
 
       .dot {
         margin-left: 0;
-        margin-right: 0;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
 
-    <div class="header">
-      <ul class="nav nav-pills pull-right">
-        <li><a href="/projects" style="text-transform: none;">Projects</a></li>
-        <li><a href="/publications" style="text-transform: none;">Publications</a></li>
-        <li class="passive">
-          <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing" style="text-transform: none;">CV</a>
-        </li>
-      </ul>
+  <div class="row marketing">
 
-      <div class="header-right">
-        <h3 class="text-muted" style="text-transform: none;">
-          <a href="/">Hemanth Sabbella</a>
-        </h3>
-        <button id="menu-btn" aria-label="Menu">☰</button>
+    <!-- LEFT COLUMN -->
+    <div class="col-sm-4">
+      <img class="img-circle" width="200" src="img/hemanth_w_400.jpg">
+
+      <p>
+        <a href="mailto:shrsabbella.2024@phdcs.smu.edu.sg">Email</a>
+      </p>
+
+      <p>
+        <a href="https://www.linkedin.com/in/hemanthsabbella/">LinkedIn</a>
+      </p>
+
+      <p>
+        <a href="https://scholar.google.com/citations?user=KPyLReEAAAAJ&hl=en">
+          Google Scholar
+        </a>
+      </p>
+
+      <!-- HASHTAGS -->
+      <div class="hashtags">
+        #neuromorphicAI #spikingneuralnetworks #wearablecomputing #lowpowersystems #tinyML
       </div>
     </div>
 
-    <ul class="mobile-menu" id="mobile-menu">
-      <li><a href="/projects">Projects</a></li>
-      <li><a href="/publications">Publications</a></li>
-      <li>
-        <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing">CV</a>
-      </li>
-    </ul>
+    <!-- RIGHT COLUMN -->
+    <div class="col-sm-8">
+      <p>
+        Hi, I'm Hemanth Sabbella, a PhD candidate at SMU.
+      </p>
 
-    <div class="row marketing">
-      <div class="col-sm-4">
-        <img class="img-circle avatar" width="200" height="200" alt="Hemanth Sabbella" src="img/hemanth_w_400.jpg">
-
-        <p>
-          <img src="https://img.icons8.com/windows/32/000000/email-open.png" style="width:23px; height:23px; vertical-align:middle;">
-          <a href="mailto:shrsabbella.2024@phdcs.smu.edu.sg">Email</a>
-        </p>
-
-        <p>
-          <img src="https://img.icons8.com/ios-filled/344/linkedin-2--v1.png" style="width:22px; height:22px; vertical-align:middle;">
-          <a href="https://www.linkedin.com/in/hemanthsabbella/">LinkedIn</a>
-        </p>
-
-        <p>
-          <img src="https://img.icons8.com/material-two-tone/344/google-scholar.png" style="width:25px; height:25px; vertical-align:middle;">
-          <a href="https://scholar.google.com/citations?user=KPyLReEAAAAJ&amp;hl=en">Google Scholar</a>
-        </p>
-
-        <span itemprop="hashtags" class="research-block">
-          <h2>Research Interests</h2>
-          <p>
-            #neuromorphicAI #spikingneuralnetworks #wearablecomputing #lowpowersystems #tinyML
-          </p>
-        </span>
-      </div>
-
-      <div itemscope itemtype="http://data-vocabulary.org/Person" class="col-sm-8">
-        <p>
-          Hi, I'm Hemanth Sabbella, a second-year PhD candidate at SCIS,
-          <a href="https://computing.smu.edu.sg/">Singapore Management University (SMU)</a>,
-          advised by Prof. Archan Misra. I am also a visiting student at the Mens, Manus, and Machina (M3S) group under
-          <a href="https://m3s.mit.edu/our-team/hemant-sebbal">MIT's SMART Program</a>.
-        </p>
-
-        <p>
-          My research focuses on neuromorphic computing and spiking neural networks, with an emphasis on temporal characteristics and energy efficiency for applications in robotics and ubiquitous systems.
-        </p>
-
-        <p>
-          I completed my undergraduate studies in Electronics and Communications Engineering from
-          <span itemprop="affiliation">
-            <a href="https://www.iiitd.ac.in/">IIIT-Delhi</a>
-          </span>.
-          I then worked as a Senior Project Associate at
-          <a href="https://www.iisc.ac.in/">Indian Institute of Science (IISc)</a>,
-          where I worked on low-power sensing and embedded AI systems, followed by a role as a Research Engineer at SMU.
-        </p>
-
-        <p>
-          Outside research, I enjoy photography (featured in National Geographic, see
-          <a href="https://www.instagram.com/foto.obscura/">@foto.obscura</a>), reading non-fiction, and exploring diverse cuisines.
-        </p>
-      </div>
+      <p>
+        My research focuses on neuromorphic computing and spiking neural networks.
+      </p>
     </div>
-
-    <section class="timeline-section">
-      <h2>Recent Highlights</h2>
-
-      <div class="timeline-horizontal">
-        <div class="timeline-item">
-          <div class="dot"></div>
-          <h3>Dec 2025</h3>
-          <p>Passed PhD Qualifying Exam; officially a PhD candidate.</p>
-        </div>
-
-        <div class="timeline-item">
-          <div class="dot"></div>
-          <h3>Oct 2025</h3>
-          <p>
-            Guest Talk at AI and Humanity Hub, Loughborough University —
-            <em>On the Temporal Characteristics of Spiking Neural Networks</em>
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <div class="dot"></div>
-          <h3>May 2025</h3>
-          <p>
-            Visiting Student at SMART (MIT), M3S Group.
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <div class="dot"></div>
-          <h3>Jan 2025</h3>
-          <p>
-            Workshop paper accepted at <strong>CoMoRea’25</strong> (PerCom 2025).
-          </p>
-        </div>
-      </div>
-    </section>
 
   </div>
 
-  <script>
-    document.getElementById('menu-btn').addEventListener('click', function() {
-      var menu = document.getElementById('mobile-menu');
-      menu.style.display = (menu.style.display === 'block' ? 'none' : 'block');
-    });
-  </script>
+  <!-- TIMELINE -->
+  <section class="timeline-section">
+    <h2>Recent Highlights</h2>
 
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/library.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js"></script>
+    <div class="timeline-horizontal">
+
+      <div class="timeline-item">
+        <div class="dot"></div>
+        <h3>Dec 2025</h3>
+        <p>Passed PhD Qualifying Exam</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="dot"></div>
+        <h3>Oct 2025</h3>
+        <p>Guest Talk at Loughborough University</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="dot"></div>
+        <h3>May 2025</h3>
+        <p>Visiting Student at SMART (MIT)</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="dot"></div>
+        <h3>Jan 2025</h3>
+        <p>Paper accepted at CoMoRea’25</p>
+      </div>
+
+    </div>
+  </section>
+
+</div>
 </body>
 </html>
