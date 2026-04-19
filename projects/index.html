@@ -68,7 +68,7 @@
       margin: 0 0 1rem;
       padding-bottom: 0.6rem;
       border-bottom: 1px solid var(--line);
-      font-size: 1.12rem;
+      font-size: 1.22rem;
       font-weight: 600;
       color: var(--text-main);
       letter-spacing: 0.01em;
@@ -152,13 +152,14 @@
 
     .project-card {
       display: grid;
-      grid-template-columns: 130px 1fr;
+      grid-template-columns: 140px 1fr;
       gap: 1rem;
       border: 1px solid var(--line);
       border-radius: 14px;
       padding: 1rem;
       background: var(--card);
       min-height: 100%;
+      align-items: start;
     }
 
     .project-card-media {
@@ -168,12 +169,12 @@
       background: var(--card-soft);
       border-radius: 12px;
       padding: 0.7rem;
-      min-height: 132px;
+      min-height: 140px;
     }
 
     .project-card img {
       width: 100%;
-      height: 112px;
+      height: 120px;
       object-fit: contain;
       display: block;
       border-radius: 8px;
@@ -355,22 +356,20 @@
 
     <div class="projects-wrap">
       <div class="project-section">
-        <h2 class="section-title">Low-power acoustic classification system [deployable]</h2>
+        
         <div class="featured-project">
           <div class="featured-media">
             <img src="/img/logo_ubat.png" alt="u-Bat">
           </div>
           <div>
+            <span class="project-tag alt">Low-power</span>
+            <span class="project-tag">Neuromorphic cochlea</span>
+            <span class="project-tag">Audio classification</span>
+            <span class="project-tag">Embedded AI</span>
             <h3 class="project-name">u-Bat</h3>
             <p class="project-text">
               u-Bat is a deployable edge system to detect and classify audio signatures with an ultra-low-power, lightweight acoustic classifier based on a neuromorphic cochlear model. It was also piloted in Dihing Patkai, Assam, in the context of timber logging.
             </p>
-            <div class="link-group" style="margin-bottom: 0.65rem;">
-              <span class="project-tag alt">Low-power</span>
-              <span class="project-tag">Neuromorphic cochlea</span>
-              <span class="project-tag">Audio classification</span>
-              <span class="project-tag">Embedded AI</span>
-            </div>
             <div class="link-group">
               <a href="http://u-Bat.github.io/" target="_blank">Showcase</a>
               <a href="https://github.com/HemanthSabbella/u-Bat" target="_blank">GitHub</a>
@@ -380,24 +379,19 @@
       </div>
 
       <div class="project-section">
-        <h2 class="section-title">Low power wearable computing</h2>
+        
         <div class="project-grid">
           <div class="project-card">
             <div class="project-card-media">
               <img src="/img/IMG_0244.jpeg" alt="PA2BLO">
             </div>
             <div>
+              <span class="project-tag">Ultra low power</span>
+              <span class="project-tag">500 Hz speaker authentication</span>
               <h3 class="project-name">PA2BLO</h3>
               <p class="project-text">
                 An ultra-low-power wearable badge for voice interaction, highlighting 500 Hz speaker authentication and a supercapacitor-based design that charges in 1 minute and lasts over a day with 2+ hours of active use.
               </p>
-              <div class="link-group" style="margin-bottom: 0.65rem;">
-                <span class="project-tag">Low power</span>
-                <span class="project-tag">Wearable</span>
-                <span class="project-tag">Speaker authentication</span>
-                <span class="project-tag">Pitch shifting</span>
-                <span class="project-tag">Embedded AI</span>
-              </div>
               <div class="link-group">
                 <a href="https://ieeexplore.ieee.org/abstract/document/10494427" target="_blank">Paper</a>
                 <a href="#" target="_blank">GitHub</a>
@@ -410,17 +404,14 @@
               <img src="/img/ResponsiveSNNs_1.png" alt="ResponsiveSNNs">
             </div>
             <div>
+              <span class="project-tag">Spiking neural networks</span>
+              <span class="project-tag">ResponsiveSNNs</span>
               <h3 class="project-name">ResponsiveSNNs for Fall Detection</h3>
               <p class="project-text">
-                A fall detection project exploring spiking neural networks for more energy-efficient and faster-responsive inference on resource-constrained wearable devices.
+                Improving fall detection using spiking neural networks for more energy-efficient and faster-responsive inference on resource-constrained wearable devices.
               </p>
-              <div class="link-group" style="margin-bottom: 0.65rem;">
-                <span class="project-tag">Spiking neural networks</span>
-                <span class="project-tag">Responsiveness</span>
-                <span class="project-tag">Fall detection</span>
-                <span class="project-tag">Wearables</span>
-              </div>
               <div class="link-group">
+                <a href="https://ieeexplore.ieee.org/abstract/document/11038662" target="_blank">Paper</a>
                 <a href="https://github.com/NeuromorphicX/ResponsiveSNNs-FallDetection" target="_blank">GitHub</a>
               </div>
             </div>
@@ -429,22 +420,19 @@
       </div>
 
       <div class="project-section">
-        <h2 class="section-title">Imaging and sensing systems</h2>
+        
         <div class="project-grid">
           <div class="project-card">
             <div class="project-card-media">
               <img src="/img/Dhvani.jpeg" alt="Dhvani">
             </div>
             <div>
+              <span class="project-tag">Ultrasound imaging</span>
+              <span class="project-tag">Open source</span>
               <h3 class="project-name">Dhvani</h3>
               <p class="project-text">
                 A low-cost, portable ultrasound imaging system with super-resolution capability, combining hardware development, testing, and software support. (GitHub: 13 stars.)
               </p>
-              <div class="link-group" style="margin-bottom: 0.65rem;">
-                <span class="project-tag">Low-cost</span>
-                <span class="project-tag">Ultrasound imaging</span>
-                <span class="project-tag">Open source</span>
-              </div>
               <div class="link-group">
                 <a href="https://github.com/HemanthSabbella/Dhvani" target="_blank">GitHub</a>
               </div>
@@ -456,15 +444,12 @@
               <img src="/img/pointSpectra.jpg" alt="pointSpectra">
             </div>
             <div>
+              <span class="project-tag">Photospectrography</span>
+              <span class="project-tag">Open source</span>
               <h3 class="project-name">pointSpectra</h3>
               <p class="project-text">
                 A portable, handheld photospectrometer built as a low-cost, open-source platform for absorbance measurement and analyte sensing.
               </p>
-              <div class="link-group" style="margin-bottom: 0.65rem;">
-                <span class="project-tag">Low-cost</span>
-                <span class="project-tag">Photospectrography</span>
-                <span class="project-tag">Open source</span>
-              </div>
               <div class="link-group">
                 <a href="https://hemanthsabbella.github.io/pointSpectra/" target="_blank">Showcase</a>
                 <a href="https://github.com/HemanthSabbella/pointSpectra/tree/main" target="_blank">GitHub</a>
