@@ -154,6 +154,10 @@
     .project-card {
       display: grid;
       grid-template-columns: 140px 1fr;
+      grid-template-rows: auto auto;
+      grid-template-areas:
+        "media content"
+        "links content";
       gap: 1rem;
       border: 1px solid var(--line);
       border-radius: 14px;
@@ -163,7 +167,12 @@
       align-items: start;
     }
 
+    .project-card-wide {
+      grid-column: 1 / -1;
+    }
+
     .project-card-media {
+      grid-area: media;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -171,6 +180,23 @@
       border-radius: 12px;
       padding: 0.7rem;
       min-height: 140px;
+    }
+
+    .project-card-content {
+      grid-area: content;
+    }
+
+    .project-card-links {
+      grid-area: links;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-top: -0.2rem;
+    }
+
+    .project-card-links a {
+      font-size: 0.96rem;
     }
 
     .project-card img {
@@ -290,10 +316,18 @@
       }
 
       .featured-project,
-      .project-card,
       .project-grid,
       .hardware-clean-grid {
         grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+          "media"
+          "links"
+          "content";
       }
 
       .featured-media,
@@ -353,7 +387,11 @@
             <div class="project-card-media">
               <img src="/img/IMG_0244.jpeg" alt="PA2BLO">
             </div>
-            <div>
+            <div class="project-card-links">
+              <a href="https://ieeexplore.ieee.org/abstract/document/10494427" target="_blank">Paper</a>
+              <a href="#" target="_blank">GitHub</a>
+            </div>
+            <div class="project-card-content">
               <h3 class="project-name">PA2BLO</h3>
               <p class="project-text">
                 An ultra-low-power wearable badge for voice interaction, highlighting 500 Hz speaker authentication and a supercapacitor-based design that charges in 1 minute and lasts over a day with 2+ hours of active use.
@@ -362,18 +400,18 @@
                 <span class="project-tag alt">Ultra low power</span>
                 <span class="project-tag alt">500 Hz speaker authentication</span>
               </div>
-              <div class="link-group">
-                <a href="https://ieeexplore.ieee.org/abstract/document/10494427" target="_blank">Paper</a>
-                <a href="#" target="_blank">GitHub</a>
               </div>
-            </div>
           </div>
 
           <div class="project-card">
             <div class="project-card-media">
               <img src="/img/ResponsiveSNNs_1.png" alt="ResponsiveSNNs">
             </div>
-            <div>
+            <div class="project-card-links">
+              <a href="https://ieeexplore.ieee.org/abstract/document/11038662" target="_blank">Paper</a>
+              <a href="https://github.com/NeuromorphicX/ResponsiveSNNs-FallDetection" target="_blank">GitHub</a>
+            </div>
+            <div class="project-card-content">
               <h3 class="project-name">ResponsiveSNNs for Fall Detection</h3>
               <p class="project-text">
                 Improving fall detection using spiking neural networks for more energy-efficient and faster-responsive inference on resource-constrained wearable devices.
@@ -382,18 +420,14 @@
                 <span class="project-tag alt">Spiking neural networks</span>
                 <span class="project-tag alt">ResponsiveSNNs</span>
               </div>
-              <div class="link-group">
-                <a href="https://ieeexplore.ieee.org/abstract/document/11038662" target="_blank">Paper</a>
-                <a href="https://github.com/NeuromorphicX/ResponsiveSNNs-FallDetection" target="_blank">GitHub</a>
               </div>
-            </div>
           </div>
 
-          <div class="project-card">
+          <div class="project-card project-card-wide">
             <div class="project-card-media">
               <img src="/img/logo_ubat.png" alt="u-Bat">
             </div>
-            <div>
+            <div class="project-card-content">
               <span class="project-tag alt">Low-power</span>
               <span class="project-tag alt">Neuromorphic cochlea</span>
               <span class="project-tag alt">Audio classification</span>
@@ -413,7 +447,10 @@
             <div class="project-card-media">
               <img src="/img/Dhvani.jpeg" alt="Dhvani">
             </div>
-            <div>
+            <div class="project-card-links">
+              <a href="https://github.com/HemanthSabbella/Dhvani" target="_blank">GitHub</a>
+            </div>
+            <div class="project-card-content">
               <h3 class="project-name">Dhvani</h3>
               <p class="project-text">
                 A low-cost, portable ultrasound imaging system with super-resolution capability, combining hardware development, testing, and software support. (GitHub: 13 stars.)
@@ -422,17 +459,18 @@
                 <span class="project-tag alt">Ultrasound imaging</span>
                 <span class="project-tag alt">Open source</span>
               </div>
-              <div class="link-group">
-                <a href="https://github.com/HemanthSabbella/Dhvani" target="_blank">GitHub</a>
               </div>
-            </div>
           </div>
 
           <div class="project-card">
             <div class="project-card-media">
               <img src="/img/pointSpectra.jpg" alt="pointSpectra">
             </div>
-            <div>
+            <div class="project-card-links">
+              <a href="https://hemanthsabbella.github.io/pointSpectra/" target="_blank">Showcase</a>
+              <a href="https://github.com/HemanthSabbella/pointSpectra/tree/main" target="_blank">GitHub</a>
+            </div>
+            <div class="project-card-content">
               <h3 class="project-name">pointSpectra</h3>
               <p class="project-text">
                 A portable, handheld photospectrometer built as a low-cost, open-source platform for absorbance measurement and analyte sensing.
@@ -441,11 +479,7 @@
                 <span class="project-tag alt">Photospectrography</span>
                 <span class="project-tag alt">Open source</span>
               </div>
-              <div class="link-group">
-                <a href="https://hemanthsabbella.github.io/pointSpectra/" target="_blank">Showcase</a>
-                <a href="https://github.com/HemanthSabbella/pointSpectra/tree/main" target="_blank">GitHub</a>
               </div>
-            </div>
           </div>
         </div>
       </div>
@@ -458,7 +492,7 @@
               <img src="/img/EMI.png" alt="EMI Sensing Board">
             </div>
             <h3 class="project-name">EMI Sensing Board</h3>
-            <p class="project-text">Low-noise sensing board design for EMI-related measurement workflows.</p>
+            <p class="project-text">Low-noise sensing board design for EMI-related measurements.</p>
             <div class="link-group">
               <a href="https://github.com/HemanthSabbella/hardware_designs/tree/master/EMI_sensing_board/LNA-Board(DL)" target="_blank">Repository</a>
             </div>
