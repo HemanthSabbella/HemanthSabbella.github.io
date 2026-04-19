@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <!-- fixed viewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Projects | Hemanth Sabbella">
+  <meta name="description" content="Hands-on projects">
   <meta name="author" content="Hemanth Sabbella">
   <meta property="og:image" content="img/hemanth_small.jpg" />
   <title>Projects | Hemanth</title>
 
+  <!-- styles -->
   <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/jumbotron-narrow.css" rel="stylesheet">
   <link href="/css/style.css" rel="stylesheet">
@@ -15,24 +17,25 @@
   <style>
     :root {
       --ocean-primary: #0096C7;
-      --ocean-hover: #006494;
-      --accent-soft: rgba(0, 150, 199, 0.08);
-      --green-soft: rgba(0, 106, 78, 0.08);
-      --text-main: #17313d;
-      --text-muted: #667b86;
-      --line: #e8eef2;
+      --ocean-hover:   #006494;
+      --ocean-soft: rgba(0, 150, 199, 0.08);
+      --forest-soft: rgba(0, 106, 78, 0.08);
+      --text-main: #18313d;
+      --text-muted: #6b7d86;
+      --line: #e7edf1;
       --card: #ffffff;
+      --card-soft: #fbfdfe;
     }
-
     a {
       color: var(--ocean-primary);
       text-decoration: none;
     }
     a:hover, a:focus {
       color: var(--ocean-hover);
-      text-decoration: none;
+      text-decoration: underline;
     }
 
+    /* hide stray <hr>s and only keep one under the header */
     hr { display: none !important; }
     .header {
       border-bottom: 1px solid #eee;
@@ -43,74 +46,99 @@
       border-top: none !important;
     }
 
+    /* original menu visibility */
     #menu-btn, .mobile-menu {
       display: none;
     }
 
-    .projects-shell {
-      max-width: 980px;
-      margin: 0 auto 2.5rem;
+    /* redesigned content only */
+    .projects-wrap {
+      margin-top: 0.15rem;
+      margin-bottom: 2.25rem;
     }
 
-    .projects-intro {
-      margin-bottom: 2.2rem;
+    .project-section {
+      margin-bottom: 2rem;
     }
 
-    .projects-kicker {
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--ocean-primary);
-      margin-bottom: 0.45rem;
-      font-weight: 600;
-    }
-
-    .projects-title {
-      font-size: 2rem;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      color: var(--text-main);
-      margin: 0 0 0.6rem;
-    }
-
-    .projects-subtitle {
-      max-width: 760px;
-      color: var(--text-muted);
-      font-size: 0.98rem;
-      line-height: 1.75;
-      margin: 0;
-    }
-
-    .section-block {
-      margin-bottom: 2.4rem;
-    }
-
-    .section-heading {
+    .section-title {
+      margin: 0 0 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--line);
       font-size: 1.02rem;
       font-weight: 600;
       color: var(--text-main);
-      margin: 0 0 1rem;
-      padding-bottom: 0.65rem;
-      border-bottom: 1px solid var(--line);
+      letter-spacing: 0.01em;
     }
 
     .featured-project {
       display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 1.25rem;
-      align-items: center;
-      padding: 1.2rem;
+      grid-template-columns: 190px 1fr;
+      gap: 1.2rem;
+      padding: 1.15rem;
       border: 1px solid var(--line);
-      border-radius: 16px;
+      border-radius: 14px;
       background: var(--card);
     }
 
-    .featured-project img {
+    .featured-media {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem;
+      background: var(--card-soft);
+      border-radius: 12px;
+      min-height: 170px;
+    }
+
+    .featured-media img {
       width: 100%;
       max-width: 150px;
-      display: block;
-      margin: 0 auto;
+      max-height: 130px;
       object-fit: contain;
+      display: block;
+    }
+
+    .project-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--ocean-hover);
+      background: var(--ocean-soft);
+      border-radius: 999px;
+      padding: 0.28rem 0.55rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .project-tag.alt {
+      color: #006A4E;
+      background: var(--forest-soft);
+    }
+
+    .project-name {
+      margin: 0 0 0.45rem;
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .project-text {
+      margin: 0 0 0.7rem;
+      color: var(--text-muted);
+      font-size: 0.93rem;
+      line-height: 1.68;
+    }
+
+    .link-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .link-group a {
+      font-size: 0.9rem;
     }
 
     .project-grid {
@@ -120,65 +148,32 @@
     }
 
     .project-card {
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: var(--card);
-      padding: 1rem;
       display: grid;
-      grid-template-columns: 110px 1fr;
+      grid-template-columns: 130px 1fr;
       gap: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1rem;
+      background: var(--card);
       min-height: 100%;
+    }
+
+    .project-card-media {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--card-soft);
+      border-radius: 12px;
+      padding: 0.7rem;
+      min-height: 132px;
     }
 
     .project-card img {
       width: 100%;
-      height: 100px;
+      height: 112px;
       object-fit: contain;
       display: block;
-      border-radius: 10px;
-      background: #fafcfd;
-    }
-
-    .project-name {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--text-main);
-      margin: 0 0 0.45rem;
-    }
-
-    .project-text {
-      color: var(--text-muted);
-      font-size: 0.93rem;
-      line-height: 1.65;
-      margin: 0 0 0.8rem;
-    }
-
-    .link-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .link-group a {
-      font-size: 0.9rem;
-      color: var(--ocean-primary);
-    }
-
-    .tiny-tag {
-      display: inline-block;
-      font-size: 0.72rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--ocean-hover);
-      background: var(--accent-soft);
-      padding: 0.3rem 0.55rem;
-      border-radius: 999px;
-      margin-bottom: 0.55rem;
-    }
-
-    .tiny-tag.green {
-      color: #006A4E;
-      background: var(--green-soft);
+      border-radius: 8px;
     }
 
     .hardware-grid {
@@ -190,41 +185,59 @@
     .hardware-card {
       border: 1px solid var(--line);
       border-radius: 14px;
-      padding: 0.9rem;
+      padding: 0.95rem;
       background: var(--card);
+    }
+
+    .hardware-card-media {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--card-soft);
+      border-radius: 12px;
+      padding: 0.7rem;
+      min-height: 150px;
+      margin-bottom: 0.75rem;
     }
 
     .hardware-card img {
       width: 100%;
-      height: 120px;
+      height: 128px;
       object-fit: contain;
       display: block;
-      border-radius: 10px;
-      background: #fafcfd;
-      margin-bottom: 0.8rem;
+      border-radius: 8px;
     }
 
     .hardware-card strong {
       display: block;
       color: var(--text-main);
       margin-bottom: 0.25rem;
-      font-size: 0.98rem;
+      font-size: 0.96rem;
       font-weight: 600;
+      line-height: 1.4;
     }
 
     .hardware-card span {
       display: block;
       color: var(--text-muted);
-      font-size: 0.9rem;
+      font-size: 0.89rem;
       line-height: 1.6;
       margin-bottom: 0.45rem;
     }
 
-    @media (max-width: 768px) {
+    .hardware-links a {
+      font-size: 0.9rem;
+      margin-right: 0.5rem;
+    }
+
+    /* MOBILE */
+    @media only screen and (max-width: 768px) {
+      /* hide desktop nav */
       .nav.nav-pills.pull-right {
         display: none !important;
       }
 
+      /* hamburger */
       #menu-btn {
         display: inline-block !important;
         font-size: 1.5em;
@@ -236,6 +249,7 @@
         margin-left: 0.5rem;
       }
 
+      /* center header + align icon */
       .header {
         text-align: center;
       }
@@ -248,6 +262,7 @@
         display: inline;
       }
 
+      /* mobile menu card */
       .mobile-menu {
         display: none;
         max-width: 300px;
@@ -272,72 +287,75 @@
         background: rgba(0,150,199,0.1);
       }
 
-      .projects-shell {
-        margin-bottom: 2rem;
-      }
-
-      .projects-title {
-        font-size: 1.55rem;
-      }
-
       .featured-project,
-      .project-card {
-        grid-template-columns: 1fr;
-      }
-
-      .featured-project img {
-        max-width: 120px;
-      }
-
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-
+      .project-card,
+      .project-grid,
       .hardware-grid {
         grid-template-columns: 1fr;
       }
 
-      .project-card img {
-        width: 100%;
+      .featured-media,
+      .project-card-media,
+      .hardware-card-media {
+        min-height: 140px;
+      }
+
+      .featured-media img {
         max-width: 120px;
-        height: 90px;
+      }
+
+      .project-card img,
+      .hardware-card img {
+        height: 115px;
+        width: 100%;
+        max-width: 150px;
         margin: 0 auto;
       }
     }
   </style>
 </head>
+
 <body>
   <div class="container">
-    <header class="header">
-      <a class="brand" href="/">Hemanth Sabbella</a>
-
-      <ul class="nav-links">
-        <li class="active"><a href="/projects">Projects</a></li>
-        <li><a href="/publications">Publications</a></li>
-        <li><a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing">CV</a></li>
+    <div class="header">
+      <ul class="nav nav-pills pull-right">
+        <li class="passive"><a href="/projects" style="text-transform: none;">Projects</a></li>
+        <li><a href="/publications" style="text-transform: none;">Publications</a></li>
+        <li class="passive">
+          <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing"
+             style="text-transform: none;">CV</a>
+        </li>
       </ul>
 
-      <button id="menu-btn" aria-label="Toggle navigation">☰</button>
-    </header>
+      <div class="header-right">
+        <h3 class="text-muted" style="text-transform: none;">
+          <a href="/">Hemanth Sabbella</a>
+        </h3>
+        <button id="menu-btn" aria-label="Menu">☰</button>
+      </div>
+    </div>
 
+    <!-- mobile menu -->
     <ul class="mobile-menu" id="mobile-menu">
       <li><a href="/projects">Projects</a></li>
       <li><a href="/publications">Publications</a></li>
-      <li><a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing">CV</a></li>
+      <li>
+        <a href="https://drive.google.com/file/d/1dkaPXZ74r-vuzesvS_xgJQw0AjSPQSzF/view?usp=sharing">CV</a>
+      </li>
     </ul>
 
-    <div class="projects-shell">
-      <div class="section-block">
-        <h2 class="section-heading">Featured deployment</h2>
+    <div class="projects-wrap">
+      <div class="project-section">
+        <h2 class="section-title">Featured deployment</h2>
         <div class="featured-project">
-          <div>
+          <div class="featured-media">
             <img src="/img/logo_ubat.png" alt="u-Bat">
           </div>
           <div>
-            <span class="tiny-tag green">Special project</span>
+            <span class="project-tag alt">Special project</span>
             <h3 class="project-name">u-Bat</h3>
             <p class="project-text">
-              u-Bat is a deployed field system that was piloted in Dihing Patkai, Assam, in the context of timber logging. It is featured separately here because it moved beyond prototyping into real deployment and testing.
+              u-Bat is a deployed field system piloted in Dihing Patkai, Assam, in the context of timber logging. It is highlighted separately because it moved beyond prototyping into real deployment and field testing.
             </p>
             <div class="link-group">
               <a href="http://u-Bat.github.io/" target="_blank">Showcase</a>
@@ -347,15 +365,15 @@
         </div>
       </div>
 
-      <div class="section-block">
-        <h2 class="section-heading">Wearables</h2>
+      <div class="project-section">
+        <h2 class="section-title">Low power wearable computing</h2>
         <div class="project-grid">
           <div class="project-card">
-            <div>
+            <div class="project-card-media">
               <img src="/img/IMG_0244.jpeg" alt="PA2BLO">
             </div>
             <div>
-              <span class="tiny-tag">Wearable</span>
+              <span class="project-tag">Wearable</span>
               <h3 class="project-name">PA2BLO</h3>
               <p class="project-text">
                 A wearable system project involving platform development, experimentation, and implementation contributions across the hardware-software pipeline.
@@ -368,11 +386,11 @@
           </div>
 
           <div class="project-card">
-            <div>
+            <div class="project-card-media">
               <img src="/img/ResponsiveSNNs_1.png" alt="ResponsiveSNNs">
             </div>
             <div>
-              <span class="tiny-tag">Workshop paper</span>
+              <span class="project-tag">Workshop paper</span>
               <h3 class="project-name">ResponsiveSNNs for Fall Detection</h3>
               <p class="project-text">
                 A workshop paper on improving fall detection with spiking neural networks, with accompanying code in the context of wearable sensing.
@@ -385,15 +403,15 @@
         </div>
       </div>
 
-      <div class="section-block">
-        <h2 class="section-heading">Imaging and sensing systems</h2>
+      <div class="project-section">
+        <h2 class="section-title">Imaging and sensing systems</h2>
         <div class="project-grid">
           <div class="project-card">
-            <div>
+            <div class="project-card-media">
               <img src="/img/Dhvani.jpeg" alt="Dhvani">
             </div>
             <div>
-              <span class="tiny-tag">Ultrasound imaging</span>
+              <span class="project-tag">Ultrasound imaging</span>
               <h3 class="project-name">Dhvani</h3>
               <p class="project-text">
                 A low-cost, portable, super-resolution ultrasound imaging system using an 8-channel transceiver and 16 analog multiplexers to fold 128-channel probe hardware by 16×, reducing cost. Contributions included hardware development, testing, and software scripts.
@@ -405,11 +423,11 @@
           </div>
 
           <div class="project-card">
-            <div>
+            <div class="project-card-media">
               <img src="/img/pointSpectra.jpg" alt="pointSpectra">
             </div>
             <div>
-              <span class="tiny-tag">Open source</span>
+              <span class="project-tag">Open source</span>
               <h3 class="project-name">pointSpectra</h3>
               <p class="project-text">
                 A low-cost, open-source absorbance measurement platform originally developed for venom detection use cases, but adaptable to general analyte sensing.
@@ -423,61 +441,74 @@
         </div>
       </div>
 
-      <div class="section-block">
-        <h2 class="section-heading">Open hardware development</h2>
+      <div class="project-section">
+        <h2 class="section-title">Open hardware development</h2>
         <div class="hardware-grid">
           <div class="hardware-card">
-            <img src="/img/EMI.png" alt="EMI Sensing Board">
+            <div class="hardware-card-media">
+              <img src="/img/EMI.png" alt="EMI Sensing Board">
+            </div>
             <strong>EMI Sensing Board</strong>
             <span>Low-noise sensing board design for EMI-related measurement workflows.</span>
-            <a href="https://github.com/HemanthSabbella/hardware_designs/tree/master/EMI_sensing_board/LNA-Board(DL)" target="_blank">Repository</a>
+            <div class="hardware-links">
+              <a href="https://github.com/HemanthSabbella/hardware_designs/tree/master/EMI_sensing_board/LNA-Board(DL)" target="_blank">Repository</a>
+            </div>
           </div>
 
           <div class="hardware-card">
-            <img src="/img/IIITDuino.PNG" alt="IIITDuino">
+            <div class="hardware-card-media">
+              <img src="/img/IIITDuino.PNG" alt="IIITDuino">
+            </div>
             <strong>IIITDuino</strong>
             <span>A custom embedded board platform for prototyping and experimentation.</span>
-            <a href="https://github.com/HemanthSabbella/hardware_designs/tree/master/IIITDuino_hemanth" target="_blank">Repository</a>
+            <div class="hardware-links">
+              <a href="https://github.com/HemanthSabbella/hardware_designs/tree/master/IIITDuino_hemanth" target="_blank">Repository</a>
+            </div>
           </div>
 
           <div class="hardware-card">
-            <img src="/img/EMI.png" alt="Constant Current LED Driver Board">
+            <div class="hardware-card-media">
+              <img src="/img/EMI.png" alt="Constant Current LED Driver Board">
+            </div>
             <strong>Constant Current LED Driver Board</strong>
             <span>Breakout and driver design for controlled constant-current LED operation.</span>
-            <a href="https://github.com/HemanthSabbella/hardware_designs/tree/master/LED_driver_board%5Bconstant_current%5D/TPS92638%20-%20Breakout(singlelayer)" target="_blank">Repository</a>
+            <div class="hardware-links">
+              <a href="https://github.com/HemanthSabbella/hardware_designs/tree/master/LED_driver_board%5Bconstant_current%5D/TPS92638%20-%20Breakout(singlelayer)" target="_blank">Repository</a>
+            </div>
           </div>
 
           <div class="hardware-card">
-            <img src="/img/IIITDuino.PNG" alt="Breakout Boards and Custom Libraries">
+            <div class="hardware-card-media">
+              <img src="/img/IIITDuino.PNG" alt="Breakout Boards and Custom Libraries">
+            </div>
             <strong>Breakout Boards and Custom Libraries</strong>
             <span>Compact breakout designs and reusable custom libraries for faster prototyping and board development.</span>
-            <a href="https://github.com/HemanthSabbella/hardware_designs/tree/master/Breakout%20Boards" target="_blank">Breakout Boards</a><br>
-            <a href="https://github.com/HemanthSabbella/hardware_designs/tree/master/Custom_libraries" target="_blank">Custom Libraries</a>
+            <div class="hardware-links">
+              <a href="https://github.com/HemanthSabbella/hardware_designs/tree/master/Breakout%20Boards" target="_blank">Breakout Boards</a>
+              <a href="https://github.com/HemanthSabbella/hardware_designs/tree/master/Custom_libraries" target="_blank">Custom Libraries</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <footer class="footer">
+    <div class="footer">
       <div class="row">
         <div class="col-sm-8"><p><small></small></p></div>
         <div class="col-sm-4"><p class="pull-right"><small></small></p></div>
       </div>
-    </footer>
-  </div>
+    </div>
+  </div> <!-- /container -->
 
   <script>
-    document.getElementById('menu-btn').addEventListener('click', function () {
-      var menu = document.getElementById('mobile-menu');
-      menu.style.display = menu.style.display === 'block' ? 'block' : 'block';
-      if (menu.dataset.open === 'true') {
-        menu.style.display = 'none';
-        menu.dataset.open = 'false';
-      } else {
-        menu.style.display = 'block';
-        menu.dataset.open = 'true';
-      }
+    document.getElementById('menu-btn').addEventListener('click', function() {
+      var m = document.getElementById('mobile-menu');
+      m.style.display = m.style.display === 'block' ? 'none' : 'block';
     });
   </script>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/library.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js"></script>
 </body>
 </html>
