@@ -107,16 +107,17 @@
       font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      color: var(--ocean-hover);
-      background: var(--ocean-soft);
+      color: #006A4E;
+      background: rgba(0, 106, 78, 0.08);
       border-radius: 999px;
       padding: 0.28rem 0.55rem;
       margin-bottom: 0.45rem;
+      margin-right: 0.35rem;
     }
 
     .project-tag.alt {
       color: #006A4E;
-      background: var(--forest-soft);
+      background: rgba(0, 106, 78, 0.08);
     }
 
     .project-name {
@@ -180,26 +181,23 @@
       border-radius: 8px;
     }
 
-    .hardware-grid {
+    .hardware-clean-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 1rem;
       width: 100%;
-      max-width: 100%;
-      align-items: stretch;
     }
 
-    .hardware-card {
+    .hardware-clean-card {
       border: 1px solid var(--line);
       border-radius: 14px;
-      padding: 0.95rem;
+      padding: 1rem;
       background: var(--card);
-      min-height: 100%;
-      display: flex;
-      flex-direction: column;
+      min-width: 0;
+      overflow: hidden;
     }
 
-    .hardware-card-media {
+    .hardware-clean-media {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -207,37 +205,31 @@
       border-radius: 12px;
       padding: 0.7rem;
       min-height: 150px;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.8rem;
     }
 
-    .hardware-card img {
+    .hardware-clean-media img {
       width: 100%;
-      height: 128px;
+      max-width: 140px;
+      height: 120px;
       object-fit: contain;
       display: block;
       border-radius: 8px;
     }
 
-    .hardware-card strong {
-      display: block;
-      color: var(--text-main);
-      margin-bottom: 0.25rem;
+    .hardware-clean-card .project-name {
       font-size: 1.02rem;
-      font-weight: 600;
-      line-height: 1.4;
+      margin-bottom: 0.35rem;
     }
 
-    .hardware-card span {
-      display: block;
-      color: var(--text-muted);
-      font-size: 0.95rem;
+    .hardware-clean-card .project-text {
+      font-size: 0.93rem;
       line-height: 1.65;
-      margin-bottom: 0.45rem;
+      margin-bottom: 0.55rem;
     }
 
-    .hardware-links a {
-      font-size: 0.96rem;
-      margin-right: 0.5rem;
+    .hardware-clean-card .link-group a {
+      font-size: 0.92rem;
     }
 
     /* MOBILE */
@@ -300,7 +292,7 @@
       .featured-project,
       .project-card,
       .project-grid,
-      .hardware-grid {
+      .hardware-clean-grid {
         grid-template-columns: 1fr;
       }
 
@@ -356,42 +348,20 @@
 
     <div class="projects-wrap">
       <div class="project-section">
-        
-        <div class="featured-project">
-          <div class="featured-media">
-            <img src="/img/logo_ubat.png" alt="u-Bat">
-          </div>
-          <div>
-            <span class="project-tag alt">Low-power</span>
-            <span class="project-tag">Neuromorphic cochlea</span>
-            <span class="project-tag">Audio classification</span>
-            <span class="project-tag">Embedded AI</span>
-            <h3 class="project-name">u-Bat</h3>
-            <p class="project-text">
-              u-Bat is a deployable edge system to detect and classify audio signatures with an ultra-low-power, lightweight acoustic classifier based on a neuromorphic cochlear model. It was also piloted in Dihing Patkai, Assam, in the context of timber logging.
-            </p>
-            <div class="link-group">
-              <a href="http://u-Bat.github.io/" target="_blank">Showcase</a>
-              <a href="https://github.com/HemanthSabbella/u-Bat" target="_blank">GitHub</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-section">
-        
         <div class="project-grid">
           <div class="project-card">
             <div class="project-card-media">
               <img src="/img/IMG_0244.jpeg" alt="PA2BLO">
             </div>
             <div>
-              <span class="project-tag">Ultra low power</span>
-              <span class="project-tag">500 Hz speaker authentication</span>
               <h3 class="project-name">PA2BLO</h3>
               <p class="project-text">
                 An ultra-low-power wearable badge for voice interaction, highlighting 500 Hz speaker authentication and a supercapacitor-based design that charges in 1 minute and lasts over a day with 2+ hours of active use.
               </p>
+              <div class="link-group" style="margin-bottom: 0.65rem;">
+                <span class="project-tag alt">Ultra low power</span>
+                <span class="project-tag alt">500 Hz speaker authentication</span>
+              </div>
               <div class="link-group">
                 <a href="https://ieeexplore.ieee.org/abstract/document/10494427" target="_blank">Paper</a>
                 <a href="#" target="_blank">GitHub</a>
@@ -404,35 +374,54 @@
               <img src="/img/ResponsiveSNNs_1.png" alt="ResponsiveSNNs">
             </div>
             <div>
-              <span class="project-tag">Spiking neural networks</span>
-              <span class="project-tag">ResponsiveSNNs</span>
               <h3 class="project-name">ResponsiveSNNs for Fall Detection</h3>
               <p class="project-text">
                 Improving fall detection using spiking neural networks for more energy-efficient and faster-responsive inference on resource-constrained wearable devices.
               </p>
+              <div class="link-group" style="margin-bottom: 0.65rem;">
+                <span class="project-tag alt">Spiking neural networks</span>
+                <span class="project-tag alt">ResponsiveSNNs</span>
+              </div>
               <div class="link-group">
                 <a href="https://ieeexplore.ieee.org/abstract/document/11038662" target="_blank">Paper</a>
                 <a href="https://github.com/NeuromorphicX/ResponsiveSNNs-FallDetection" target="_blank">GitHub</a>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div class="project-section">
-        
-        <div class="project-grid">
+          <div class="project-card">
+            <div class="project-card-media">
+              <img src="/img/logo_ubat.png" alt="u-Bat">
+            </div>
+            <div>
+              <span class="project-tag alt">Low-power</span>
+              <span class="project-tag alt">Neuromorphic cochlea</span>
+              <span class="project-tag alt">Audio classification</span>
+              <span class="project-tag alt">Embedded AI</span>
+              <h3 class="project-name">u-Bat</h3>
+              <p class="project-text">
+                u-Bat is a deployable edge system to detect and classify audio signatures with an ultra-low-power, lightweight acoustic classifier based on a neuromorphic cochlear model. It was also piloted in Dihing Patkai, Assam, in the context of timber logging.
+              </p>
+              <div class="link-group">
+                <a href="http://u-Bat.github.io/" target="_blank">Showcase</a>
+                <a href="https://github.com/HemanthSabbella/u-Bat" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+
           <div class="project-card">
             <div class="project-card-media">
               <img src="/img/Dhvani.jpeg" alt="Dhvani">
             </div>
             <div>
-              <span class="project-tag">Ultrasound imaging</span>
-              <span class="project-tag">Open source</span>
               <h3 class="project-name">Dhvani</h3>
               <p class="project-text">
                 A low-cost, portable ultrasound imaging system with super-resolution capability, combining hardware development, testing, and software support. (GitHub: 13 stars.)
               </p>
+              <div class="link-group" style="margin-bottom: 0.65rem;">
+                <span class="project-tag alt">Ultrasound imaging</span>
+                <span class="project-tag alt">Open source</span>
+              </div>
               <div class="link-group">
                 <a href="https://github.com/HemanthSabbella/Dhvani" target="_blank">GitHub</a>
               </div>
@@ -444,69 +433,66 @@
               <img src="/img/pointSpectra.jpg" alt="pointSpectra">
             </div>
             <div>
-              <span class="project-tag">Photospectrography</span>
-              <span class="project-tag">Open source</span>
               <h3 class="project-name">pointSpectra</h3>
               <p class="project-text">
                 A portable, handheld photospectrometer built as a low-cost, open-source platform for absorbance measurement and analyte sensing.
               </p>
-              <div class="link-group">
-                <a href="https://hemanthsabbella.github.io/pointSpectra/" target="_blank">Showcase</a>
-                <a href="https://github.com/HemanthSabbella/pointSpectra/tree/main" target="_blank">GitHub</a>
+              <div class="link-group" style="margin-bottom: 0.65rem;">
+                <span class="project-tag alt">Photospectrography</span>
+                <span class="project-tag alt">Open source</span>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-section">
+              <div class="link-group">
+                <a href="https://hemanthsabbella.github.io/pointSpectra/" targe<div class="project-section">
         <h2 class="section-title">Open hardware development</h2>
-        <div class="hardware-grid">
-          <div class="hardware-card">
-            <div class="hardware-card-media">
+        <div class="hardware-clean-grid">
+          <div class="hardware-clean-card">
+            <div class="hardware-clean-media">
               <img src="/img/EMI.png" alt="EMI Sensing Board">
             </div>
-            <strong>EMI Sensing Board</strong>
-            <span>Low-noise sensing board design for EMI-related measurement workflows.</span>
-            <div class="hardware-links">
+            <h3 class="project-name">EMI Sensing Board</h3>
+            <p class="project-text">Low-noise sensing board design for EMI-related measurement workflows.</p>
+            <div class="link-group">
               <a href="https://github.com/HemanthSabbella/hardware_designs/tree/master/EMI_sensing_board/LNA-Board(DL)" target="_blank">Repository</a>
             </div>
           </div>
 
-          <div class="hardware-card">
-            <div class="hardware-card-media">
+          <div class="hardware-clean-card">
+            <div class="hardware-clean-media">
               <img src="/img/IIITDuino.PNG" alt="IIITDuino">
             </div>
-            <strong>IIITDuino</strong>
-            <span>A custom embedded board platform for prototyping and experimentation.</span>
-            <div class="hardware-links">
+            <h3 class="project-name">IIITDuino</h3>
+            <p class="project-text">A custom embedded board platform for prototyping and experimentation.</p>
+            <div class="link-group">
               <a href="https://github.com/HemanthSabbella/hardware_designs/tree/master/IIITDuino_hemanth" target="_blank">Repository</a>
             </div>
           </div>
 
-          <div class="hardware-card">
-            <div class="hardware-card-media">
+          <div class="hardware-clean-card">
+            <div class="hardware-clean-media">
               <img src="/img/LED_driver.png" alt="Constant Current LED Driver">
             </div>
-            <strong>Constant Current LED Driver</strong>
-            <span>Breakout and driver design for controlled constant-current LED operation.</span>
-            <div class="hardware-links">
+            <h3 class="project-name">Constant Current LED Driver</h3>
+            <p class="project-text">Breakout and driver design for controlled constant-current LED operation.</p>
+            <div class="link-group">
               <a href="https://github.com/HemanthSabbella/hardware_designs/tree/master/LED_driver_board%5Bconstant_current%5D/TPS92638%20-%20Breakout(singlelayer)" target="_blank">Repository</a>
             </div>
           </div>
 
-          <div class="hardware-card">
-            <div class="hardware-card-media">
+          <div class="hardware-clean-card">
+            <div class="hardware-clean-media">
               <img src="/img/bb.png" alt="Custom Libraries">
             </div>
-            <strong>Custom Libraries</strong>
-            <span>Reusable custom hardware libraries supporting faster prototyping and board development workflows.</span>
-            <div class="hardware-links">
+            <h3 class="project-name">Custom Libraries</h3>
+            <p class="project-text">Reusable custom hardware libraries supporting faster prototyping and board development workflows.</p>
+            <div class="link-group">
               <a href="https://github.com/HemanthSabbella/hardware_designs/tree/master/Custom_libraries" target="_blank">Repository</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">     <a href="https://github.com/HemanthSabbella/hardware_designs/tree/master/Custom_libraries" target="_blank">Repository</a>
             </div>
           </div>
         </div>
